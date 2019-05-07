@@ -1,77 +1,88 @@
+import torch
 import numpy as np
 import os
-import torch.utils.data.dataset
-import torch
-from imutils import face_utils
-import dlib
-import cv2
-import os
-from scipy import misc
-import pygame
-import time
+import torchvision
+import torchvision.transforms as transforms
+import uuid
+import random
+import logging
+
+log = logging.getLogger("dataset")
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+log_file_handler = logging.FileHandler("train.log")
+log_file_handler.setFormatter(formatter)
+log.addHandler(log_file_handler)
+log_console_handler = logging.StreamHandler()
+log.addHandler(log_console_handler)
+log.setLevel(logging.INFO)
+
+
+def save_data(seq_len, eyes_left, eyes_right, faces, points, test_split=0.1):
+    test_chance = random.uniform(0, 1)
+    if test_chance < test_split:
+        dir_seq_len = 'test/' + str(seq_len)
+        if not os.path.exists(dir_seq_len):
+            os.makedirs(dir_seq_len)
+    else:
+        dir_seq_len = 'train/' + str(seq_len)
+        if not os.path.exists(dir_seq_len):
+            os.makedirs(dir_seq_len)
+
+    dirname = dir_seq_len + '/' + str(uuid.uuid4()) + '/'
+    os.mkdir(dirname)
+
+    eyes_left = np.array(eyes_left)
+    eyes_right = np.array(eyes_right)
+    faces = np.array(faces)
+    points = np.array(points)
+    # print(3 * seq_len)
+    # print(eyes_left.shape)
+    eyes_left = eyes_left.transpose((0, 3, 1, 2)).reshape((3 * seq_len, 32, 32))
+    eyes_right = eyes_right.transpose((0, 3, 1, 2)).reshape((3 * seq_len, 32, 32))
+    # print(eyes_left.shape)
+    np.save(dirname + 'points', points)
+    np.save(dirname + 'eye_left', eyes_left)
+    np.save(dirname + 'eye_right', eyes_right)
+    np.save(dirname + 'faces', faces)
+    # check = np.load(dirname + '/eye_left.npy')
+    # print(check.shape)
+    # print(check == eyes_left)
 
 
 class Dataset(torch.utils.data.Dataset):
-
-    def __init__(self, dirname='./data'):
-        self.eyes = []
+    def __init__(self, dirname='./train', seq_len=5, dataset_seq_len=60):
+        self.eye_left = []
+        self.eye_right = []
         self.face = []
-        self.x = []
-        self.y = []
-        self.dirname = dirname
-        self.size = 0
+        self.points = []
+        self.dirname = dirname + '/' + str(dataset_seq_len) + '/'
+        self.size = len(os.listdir(self.dirname))
 
-        if not os.path.exists(dirname):
-            os.makedirs(dirname)
+        names = os.listdir(self.dirname)
 
-        detector = dlib.get_frontal_face_detector()
-        predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
+        log.info(self.dirname)
+        log.info(self.size)
+        log.info("LOADING DATA...")
 
-        names = os.listdir(dirname)
-
-        print(len(os.listdir(dirname)))
-        print("LOADING DATA...")
-
-        for index in range(len(os.listdir(dirname))):
+        for index in range(len(os.listdir(self.dirname))):
             curr = names[index]
-            frame = misc.imread(dirname + '/' + curr)
-
-            rects = detector(frame, 0)
-
-            eyes_ = None
-            shape = None
-
-            if rects is None:
-                continue
-
-            for (i, rect) in enumerate(rects):
-                shape = predictor(frame, rect)
-                shape = face_utils.shape_to_np(shape)
-
-                (x_, y_, w_, h_) = cv2.boundingRect(np.array([shape[36:42]]))
-                eye_left = frame[y_ - 3:y_ + h_ + 3, x_ - 5:x_ + w_ + 5]
-
-                (x_, y_, w_, h_) = cv2.boundingRect(np.array([shape[43:48]]))
-                eye_right = frame[y_ - 3:y_ + h_ + 3, x_ - 5:x_ + w_ + 5]
-
-                if eye_left is not None and eye_right is not None:
-                    eyes_ = np.concatenate((cv2.resize(eye_left, (32, 32)), cv2.resize(eye_right, (32, 32))), axis=1)
-
-            self.add(int(curr.split('_')[2]), int(curr[:-4:].split('_')[4]), eyes_.reshape((3, 64, 32)), shape)
-        print("END LOAD DATA")
-
-    def add(self, x, y, eyes, face):
-        self.x.append(x)
-        self.y.append(y)
-        self.eyes.append(eyes)
-        self.face.append(face)
-        self.size += 1
+            # print(curr)
+            self.face.append(np.load(self.dirname + curr + '/faces.npy')[-seq_len:, :, :])
+            self.points.append(np.load(self.dirname + curr + '/points.npy')[-seq_len:, :])
+            self.eye_left.append(np.load(self.dirname + curr + '/eye_left.npy')[-seq_len * 3:, :, :])
+            self.eye_right.append(np.load(self.dirname + curr + '/eye_right.npy')[-seq_len * 3:, :, :])
+            # print(-seq_len * 3)
+            # print(np.load(self.dirname + curr + '/eye_left.npy').shape)
+            # print(self.eye_left[index].shape)
+            # print(self.points[index])
+        log.info("END LOAD DATA")
 
     def __len__(self):
         return self.size
 
     def __getitem__(self, index):
-        return torch.from_numpy(self.eyes[index]).float(), \
-               torch.from_numpy(self.face[index]).float(), \
-               torch.from_numpy(np.array([self.x[index], self.y[index]])).float()
+        return torch.from_numpy(np.array(self.eye_left[index])).float(), \
+               torch.from_numpy(np.array(self.eye_right[index])).float(), \
+               torch.from_numpy(np.array(self.face[index])).float(), \
+               torch.from_numpy(np.array(self.points[index])).float()
 

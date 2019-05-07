@@ -1,4 +1,5 @@
 import pygame
+import pygame.camera
 import time
 import random
 import os
@@ -14,10 +15,13 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torchvision import transforms
 import train
+import utility
+from collections import deque
+import pygame
+import model
+import dataset
 
 pygame.init()
-
-
 
 camera_port = 0
 camera = cv2.VideoCapture(camera_port)
@@ -33,42 +37,38 @@ inst = pygame.image.load('inst.png')
 
 infoObject = pygame.display.Info()
 print(infoObject)
-#screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
-screen = pygame.display.set_mode((0, 0), pygame.NOFRAME)
-screen = pygame.display.set_mode((0, 0), pygame.NOFRAME)
+# screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+screen = pygame.display.set_mode((640, 480))
 # Костыли так как фуллскрине нельзя alt+tab ,но и открыть окно на весь экрано просто нельзя там рамка(
-time.sleep(0.1)  
+time.sleep(0.1)
 
 max_w, max_h = pygame.display.get_surface().get_size()
 
 isFullscreen = False
 
-quit = False
-dir = "data"
+_quit = False
 last_image = ''
 
 x = random.randint(0, max_w)  # infoObject.current_w
 y = random.randint(0, max_h)  # infoObject.current_h
 
-model = None
+face_detector = utility.FaceDetector()
 
-model_file = os.path.exists('./model.pth')
-if model_file:
-    print("FOUND MODEL")
-    model = train.ConvNet(2).to(device)
-    model.load_state_dict(torch.load('./model.pth'))
-    model.eval()
-else:
-    print("MODEL NOT FOUND")
+batch_size = 50
+seq_len = 4
+max_seq_len = 60
 
+model = utility.load_model('./models/model_{}.pth'.format(seq_len),
+                           device,
+                           model.TwoEyes(2, seq_len))
 
-if not os.path.exists(dir):
-    os.makedirs(dir)
+eyes_left = deque()
+eyes_right = deque()
+faces = deque()
+points = deque()
 
-
-while not quit:
-
-    time.sleep(1 / 30)
+while not _quit:
+    time.sleep(1 / 60)
 
     eyes = None
     shape = None
@@ -91,24 +91,42 @@ while not quit:
 
         for (x_, y_) in shape:  # 36 42 43 48
             pygame.draw.circle(screen, (0, 255, 0), (x_, y_), 2)
-        
-        (x_, y_, w_, h_) = cv2.boundingRect(np.array([shape[36:48]]))
-        eyes = frame[y_ - 10:y_ + h_ + 10, x_ - 10:x_ + w_ + 10]
-        
-        if eyes is not None:
-            eyes = cv2.resize(eyes, (64, 32))
 
-            eyes_frame = pygame.image.frombuffer(eyes.tostring(), (eyes.shape[1], eyes.shape[0]), "RGB")
+        (x_, y_, w_, h_) = cv2.boundingRect(np.array([shape[36:42]]))
+        eye_left = frame[y_ - 3:y_ + h_ + 3, x_ - 5:x_ + w_ + 5]
 
-            screen.blit(eyes_frame, (0, frame.shape[0]))
+        (x_, y_, w_, h_) = cv2.boundingRect(np.array([shape[43:48]]))
+        eye_right = frame[y_ - 3:y_ + h_ + 3, x_ - 5:x_ + w_ + 5]
 
-    if eyes is not None and model is not None:
-        eyes = eyes.reshape((1, 3, 64, 32))
-        shape = shape.reshape((1, 68, 2))
+        if eye_right is not None and eyes_left is not None:
+            eyes_left.append(cv2.resize(eye_left, (32, 32)))
+            eyes_right.append(cv2.resize(eye_right, (32, 32)))
+            faces.append(shape)
+            points.append([x, y])
 
-        eyes_torch = torch.from_numpy(eyes).float().to(device)
-        shape_torch = torch.from_numpy(shape).float().to(device)
-        out = model(eyes_torch, shape_torch)
+            if len(eyes_left) > max_seq_len:
+                eyes_left.popleft()
+                eyes_right.popleft()
+                faces.popleft()
+                points.popleft()
+
+
+
+    # Predict
+    if len(points) >= seq_len and model is not None:
+
+        # print(np.array([eyes_left]).transpose((0, 1, 4, 2, 3)).shape)
+        # print(np.array([eyes_left]).shape)
+        _eyes_left = np.array([eyes_left])[:, -seq_len:, :, :, :].transpose((0, 1, 4, 2, 3)).reshape((1, seq_len * 3, 32, 32))
+        # print(_eyes_left.shape)
+        # print(np.array([eyes_left])[0, 0, :, :, 0] == _eyes_left[0, 0, :, :])
+        _eyes_right = np.array([eyes_right])[:, -seq_len:, :, :, :].transpose((0, 1, 4, 2, 3)).reshape((1, seq_len * 3, 32, 32))
+        _faces = np.array([faces])[:, -seq_len:, :, :]
+
+        eyes_left_torch = torch.from_numpy(_eyes_left).float().to(device)
+        eyes_right_torch = torch.from_numpy(_eyes_right).float().to(device)
+        faces_torch = torch.from_numpy(_faces).float().to(device)
+        out = model(eyes_left_torch, eyes_right_torch, faces_torch)
 
         out = out.cpu().data.numpy()[0]
 
@@ -123,10 +141,12 @@ while not quit:
             x_pred = max_w
         if y_pred > max_h:
             y_pred = max_h
-            
+
         pygame.draw.circle(screen, (0, 255, 0), (x_pred, y_pred), 12)
 
-    pygame.draw.circle(screen, (255, 0, 0), (x, y), 8)
+    x, y = pygame.mouse.get_pos()
+    # print("{} {}".format(x, y))
+    pygame.draw.circle(screen, (255, 0, 0), (x, y), 12)
 
     pygame.display.flip()
 
@@ -134,27 +154,14 @@ while not quit:
     for event in events:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
-                quit = True
-            if event.key == pygame.K_SPACE and eyes is not None:
-                last_image = dir + "/{}_x_{}_y_{}.jpg".format(int(time.time()), x, y)
-                pygame.image.save(img, last_image)
-                x = random.randint(8, max_w - 8)
-                y = random.randint(8, max_h - 8)
-            if event.key == pygame.K_z:
-                if os.path.exists(last_image):
-                    os.remove(last_image)
+                _quit = True
+            if event.key == pygame.K_SPACE and len(points) >= max_seq_len:
+                dataset.save_data(max_seq_len, list(eyes_left), list(eyes_right), list(faces), list(points))
             if event.key == pygame.K_t:
-                model = train.train_model()
-                model.eval()
-            if event.key == pygame.K_f:
-                if isFullscreen:
-                    screen = pygame.display.set_mode((infoObject.current_w, infoObject.current_h))
-                    isFullscreen = False
-                else:
-                    screen = pygame.display.set_mode((infoObject.current_w, infoObject.current_h), pygame.FULLSCREEN)
-                    isFullscreen = True
+                model = train.train_model(seq_len)
+                train.test_model(model, seq_len)
         if event.type == pygame.QUIT:
-            quit = True
+            _quit = True
 
 # cam.stop()
 pygame.quit()

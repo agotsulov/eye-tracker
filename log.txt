@@ -1,454 +1,1558 @@
 /usr/bin/python3.6 /home/byzilio/Workspace/Python3/eye-tracker/rnn/run_train.py
-Current model seq_len:1
-2917
+CURRNET MODEL seq_len: 1
+CURRENT MODEL: TwoEyes
+./rnn/train/60/
+2453
 LOADING DATA...
 END LOAD DATA
 TRAIN...
-Epoch [1/50], Step [25/59], Loss: 125268.6797
-Epoch [1/50], Step [50/59], Loss: 113907.8906
-Epoch [2/50], Step [25/59], Loss: 97056.9922
-Epoch [2/50], Step [50/59], Loss: 107229.8672
-Epoch [3/50], Step [25/59], Loss: 86786.5625
-Epoch [3/50], Step [50/59], Loss: 83243.2578
-Epoch [4/50], Step [25/59], Loss: 81152.1562
-Epoch [4/50], Step [50/59], Loss: 60003.2656
-Epoch [5/50], Step [25/59], Loss: 49452.7969
-Epoch [5/50], Step [50/59], Loss: 47352.7344
-Epoch [6/50], Step [25/59], Loss: 24165.5527
-Epoch [6/50], Step [50/59], Loss: 21280.7891
-Epoch [7/50], Step [25/59], Loss: 11249.4453
-Epoch [7/50], Step [50/59], Loss: 16827.4668
-Epoch [8/50], Step [25/59], Loss: 10096.8721
-Epoch [8/50], Step [50/59], Loss: 5578.5337
-Epoch [9/50], Step [25/59], Loss: 4493.2583
-Epoch [9/50], Step [50/59], Loss: 3390.7312
-Epoch [10/50], Step [25/59], Loss: 2444.1445
-Epoch [10/50], Step [50/59], Loss: 2090.9268
-Epoch [11/50], Step [25/59], Loss: 2615.8687
-Epoch [11/50], Step [50/59], Loss: 2744.2400
-Epoch [12/50], Step [25/59], Loss: 2215.4338
-Epoch [12/50], Step [50/59], Loss: 1959.3983
-Epoch [13/50], Step [25/59], Loss: 2351.0515
-Epoch [13/50], Step [50/59], Loss: 1673.2511
-Epoch [14/50], Step [25/59], Loss: 1631.3743
-Epoch [14/50], Step [50/59], Loss: 2085.4819
-Epoch [15/50], Step [25/59], Loss: 1985.1006
-Epoch [15/50], Step [50/59], Loss: 2687.4346
-Epoch [16/50], Step [25/59], Loss: 1161.8474
-Epoch [16/50], Step [50/59], Loss: 2053.9839
-Epoch [17/50], Step [25/59], Loss: 1500.6110
-Epoch [17/50], Step [50/59], Loss: 1755.6293
-Epoch [18/50], Step [25/59], Loss: 1731.4897
-Epoch [18/50], Step [50/59], Loss: 1625.5504
-Epoch [19/50], Step [25/59], Loss: 2523.8115
-Epoch [19/50], Step [50/59], Loss: 1257.9293
-Epoch [20/50], Step [25/59], Loss: 1662.3411
-Epoch [20/50], Step [50/59], Loss: 1525.9906
-Epoch [21/50], Step [25/59], Loss: 1447.9539
-Epoch [21/50], Step [50/59], Loss: 1800.6012
-Epoch [22/50], Step [25/59], Loss: 1782.2524
-Epoch [22/50], Step [50/59], Loss: 1834.8263
-Epoch [23/50], Step [25/59], Loss: 2200.4954
-Epoch [23/50], Step [50/59], Loss: 1458.3589
-Epoch [24/50], Step [25/59], Loss: 1320.7394
-Epoch [24/50], Step [50/59], Loss: 1285.9520
-Epoch [25/50], Step [25/59], Loss: 2259.0132
-Epoch [25/50], Step [50/59], Loss: 3787.0205
-Epoch [26/50], Step [25/59], Loss: 1221.6704
-Epoch [26/50], Step [50/59], Loss: 1091.9541
-Epoch [27/50], Step [25/59], Loss: 1825.2432
-Epoch [27/50], Step [50/59], Loss: 1336.2280
-Epoch [28/50], Step [25/59], Loss: 1169.2395
-Epoch [28/50], Step [50/59], Loss: 1526.3236
-Epoch [29/50], Step [25/59], Loss: 1349.3789
-Epoch [29/50], Step [50/59], Loss: 1720.0175
-Epoch [30/50], Step [25/59], Loss: 978.7507
-Epoch [30/50], Step [50/59], Loss: 1548.0223
-Epoch [31/50], Step [25/59], Loss: 883.8560
-Epoch [31/50], Step [50/59], Loss: 1071.9775
-Epoch [32/50], Step [25/59], Loss: 1188.2275
-Epoch [32/50], Step [50/59], Loss: 1173.2787
-Epoch [33/50], Step [25/59], Loss: 1741.2072
-Epoch [33/50], Step [50/59], Loss: 1365.4261
-Epoch [34/50], Step [25/59], Loss: 2468.3489
-Epoch [34/50], Step [50/59], Loss: 2718.3250
-Epoch [35/50], Step [25/59], Loss: 1449.1801
-Epoch [35/50], Step [50/59], Loss: 1038.7408
-Epoch [36/50], Step [25/59], Loss: 1107.0901
-Epoch [36/50], Step [50/59], Loss: 965.0624
-Epoch [37/50], Step [25/59], Loss: 1408.2819
-Epoch [37/50], Step [50/59], Loss: 905.6131
-Epoch [38/50], Step [25/59], Loss: 1347.0485
-Epoch [38/50], Step [50/59], Loss: 1408.6981
-Epoch [39/50], Step [25/59], Loss: 1918.9784
-Epoch [39/50], Step [50/59], Loss: 1687.1390
-Epoch [40/50], Step [25/59], Loss: 1350.5775
-Epoch [40/50], Step [50/59], Loss: 840.6111
-Epoch [41/50], Step [25/59], Loss: 1251.2894
-Epoch [41/50], Step [50/59], Loss: 1908.8456
-Epoch [42/50], Step [25/59], Loss: 767.0212
-Epoch [42/50], Step [50/59], Loss: 1672.9442
-Epoch [43/50], Step [25/59], Loss: 1155.7511
-Epoch [43/50], Step [50/59], Loss: 1858.5490
-Epoch [44/50], Step [25/59], Loss: 984.0144
-Epoch [44/50], Step [50/59], Loss: 971.4258
-Epoch [45/50], Step [25/59], Loss: 1470.0760
-Epoch [45/50], Step [50/59], Loss: 564.1941
-Epoch [46/50], Step [25/59], Loss: 1565.2577
-Epoch [46/50], Step [50/59], Loss: 842.0045
-Epoch [47/50], Step [25/59], Loss: 904.3360
-Epoch [47/50], Step [50/59], Loss: 1618.2728
-Epoch [48/50], Step [25/59], Loss: 739.2607
-Epoch [48/50], Step [50/59], Loss: 2375.4395
-Epoch [49/50], Step [25/59], Loss: 1430.3567
-Epoch [49/50], Step [50/59], Loss: 709.2899
-Epoch [50/50], Step [25/59], Loss: 1092.9843
-Epoch [50/50], Step [50/59], Loss: 1963.5980
-48
+Epoch [1/50], Step [25/50], Loss: 105234.4062
+Epoch [1/50], Step [50/50], Loss: 136069.9844
+Epoch [2/50], Step [25/50], Loss: 115954.0938
+Epoch [2/50], Step [50/50], Loss: 52872.5977
+Epoch [3/50], Step [25/50], Loss: 92492.0781
+Epoch [3/50], Step [50/50], Loss: 19922.4473
+Epoch [4/50], Step [25/50], Loss: 67031.3984
+Epoch [4/50], Step [50/50], Loss: 53820.6758
+Epoch [5/50], Step [25/50], Loss: 56442.2734
+Epoch [5/50], Step [50/50], Loss: 50526.8008
+Epoch [6/50], Step [25/50], Loss: 39969.4727
+Epoch [6/50], Step [50/50], Loss: 12775.1709
+Epoch [7/50], Step [25/50], Loss: 24642.7168
+Epoch [7/50], Step [50/50], Loss: 38862.5625
+Epoch [8/50], Step [25/50], Loss: 29373.2520
+Epoch [8/50], Step [50/50], Loss: 60895.0820
+Epoch [9/50], Step [25/50], Loss: 4281.6880
+Epoch [9/50], Step [50/50], Loss: 13920.5830
+Epoch [10/50], Step [25/50], Loss: 6360.2607
+Epoch [10/50], Step [50/50], Loss: 4413.4160
+Epoch [11/50], Step [25/50], Loss: 1727.2800
+Epoch [11/50], Step [50/50], Loss: 30689.9629
+Epoch [12/50], Step [25/50], Loss: 2619.4421
+Epoch [12/50], Step [50/50], Loss: 8535.7578
+Epoch [13/50], Step [25/50], Loss: 1823.1403
+Epoch [13/50], Step [50/50], Loss: 24013.5312
+Epoch [14/50], Step [25/50], Loss: 5964.8813
+Epoch [14/50], Step [50/50], Loss: 11261.8389
+Epoch [15/50], Step [25/50], Loss: 2487.3584
+Epoch [15/50], Step [50/50], Loss: 14233.5283
+Epoch [16/50], Step [25/50], Loss: 2017.8906
+Epoch [16/50], Step [50/50], Loss: 12359.2432
+Epoch [17/50], Step [25/50], Loss: 2504.9192
+Epoch [17/50], Step [50/50], Loss: 53936.3281
+Epoch [18/50], Step [25/50], Loss: 2119.7961
+Epoch [18/50], Step [50/50], Loss: 39651.9883
+Epoch [19/50], Step [25/50], Loss: 3958.5249
+Epoch [19/50], Step [50/50], Loss: 30579.8066
+Epoch [20/50], Step [25/50], Loss: 3661.3474
+Epoch [20/50], Step [50/50], Loss: 31966.5703
+Epoch [21/50], Step [25/50], Loss: 1599.5652
+Epoch [21/50], Step [50/50], Loss: 42812.9062
+Epoch [22/50], Step [25/50], Loss: 5092.8545
+Epoch [22/50], Step [50/50], Loss: 19938.6230
+Epoch [23/50], Step [25/50], Loss: 2279.3291
+Epoch [23/50], Step [50/50], Loss: 38078.7930
+Epoch [24/50], Step [25/50], Loss: 1417.5870
+Epoch [24/50], Step [50/50], Loss: 8604.8916
+Epoch [25/50], Step [25/50], Loss: 1282.2505
+Epoch [25/50], Step [50/50], Loss: 19538.7090
+Epoch [26/50], Step [25/50], Loss: 2899.1270
+Epoch [26/50], Step [50/50], Loss: 20477.6387
+Epoch [27/50], Step [25/50], Loss: 2124.7644
+Epoch [27/50], Step [50/50], Loss: 5620.1470
+Epoch [28/50], Step [25/50], Loss: 2017.5269
+Epoch [28/50], Step [50/50], Loss: 6577.3945
+Epoch [29/50], Step [25/50], Loss: 2199.4612
+Epoch [29/50], Step [50/50], Loss: 8024.0054
+Epoch [30/50], Step [25/50], Loss: 2430.5745
+Epoch [30/50], Step [50/50], Loss: 6900.8022
+Epoch [31/50], Step [25/50], Loss: 1435.5603
+Epoch [31/50], Step [50/50], Loss: 21384.5293
+Epoch [32/50], Step [25/50], Loss: 1750.8164
+Epoch [32/50], Step [50/50], Loss: 13518.2607
+Epoch [33/50], Step [25/50], Loss: 2902.9221
+Epoch [33/50], Step [50/50], Loss: 2611.9675
+Epoch [34/50], Step [25/50], Loss: 2122.1609
+Epoch [34/50], Step [50/50], Loss: 10060.2178
+Epoch [35/50], Step [25/50], Loss: 2722.1572
+Epoch [35/50], Step [50/50], Loss: 37728.3008
+Epoch [36/50], Step [25/50], Loss: 1205.2086
+Epoch [36/50], Step [50/50], Loss: 23527.8438
+Epoch [37/50], Step [25/50], Loss: 1930.8441
+Epoch [37/50], Step [50/50], Loss: 7972.9155
+Epoch [38/50], Step [25/50], Loss: 874.6532
+Epoch [38/50], Step [50/50], Loss: 16538.2559
+Epoch [39/50], Step [25/50], Loss: 2531.9529
+Epoch [39/50], Step [50/50], Loss: 12723.0283
+Epoch [40/50], Step [25/50], Loss: 1451.4447
+Epoch [40/50], Step [50/50], Loss: 11865.8154
+Epoch [41/50], Step [25/50], Loss: 1184.3173
+Epoch [41/50], Step [50/50], Loss: 23188.7578
+Epoch [42/50], Step [25/50], Loss: 1615.3324
+Epoch [42/50], Step [50/50], Loss: 4547.0107
+Epoch [43/50], Step [25/50], Loss: 3547.2610
+Epoch [43/50], Step [50/50], Loss: 30172.2734
+Epoch [44/50], Step [25/50], Loss: 1790.0173
+Epoch [44/50], Step [50/50], Loss: 8668.2812
+Epoch [45/50], Step [25/50], Loss: 2570.8132
+Epoch [45/50], Step [50/50], Loss: 7426.8022
+Epoch [46/50], Step [25/50], Loss: 1688.1608
+Epoch [46/50], Step [50/50], Loss: 7439.8120
+Epoch [47/50], Step [25/50], Loss: 3463.6001
+Epoch [47/50], Step [50/50], Loss: 36381.8711
+Epoch [48/50], Step [25/50], Loss: 2323.8909
+Epoch [48/50], Step [50/50], Loss: 18900.1465
+Epoch [49/50], Step [25/50], Loss: 3397.5781
+Epoch [49/50], Step [50/50], Loss: 412.2272
+Epoch [50/50], Step [25/50], Loss: 2245.1533
+Epoch [50/50], Step [50/50], Loss: 14844.9492
+rnn/test/60/
+248
 LOADING DATA...
 END LOAD DATA
-Loss: 1989.6084
-MIN LOSS: 1989.6083984375
-TOTAL LOSS: 1989.6083984375
-AVG LOSS:41.450174967447914
-Current model seq_len:2
-2917
-LOADING DATA...
-END LOAD DATA
-TRAIN...
-Epoch [1/50], Step [25/59], Loss: 118133.7500
-Epoch [1/50], Step [50/59], Loss: 107506.2188
-Epoch [2/50], Step [25/59], Loss: 108083.2734
-Epoch [2/50], Step [50/59], Loss: 110217.9297
-Epoch [3/50], Step [25/59], Loss: 69921.7891
-Epoch [3/50], Step [50/59], Loss: 83625.4922
-Epoch [4/50], Step [25/59], Loss: 63807.9414
-Epoch [4/50], Step [50/59], Loss: 54316.0898
-Epoch [5/50], Step [25/59], Loss: 73941.3203
-Epoch [5/50], Step [50/59], Loss: 59098.1055
-Epoch [6/50], Step [25/59], Loss: 24612.7480
-Epoch [6/50], Step [50/59], Loss: 22344.2168
-Epoch [7/50], Step [25/59], Loss: 11446.0195
-Epoch [7/50], Step [50/59], Loss: 15126.7412
-Epoch [8/50], Step [25/59], Loss: 4019.5984
-Epoch [8/50], Step [50/59], Loss: 4213.8530
-Epoch [9/50], Step [25/59], Loss: 1993.8342
-Epoch [9/50], Step [50/59], Loss: 3745.6431
-Epoch [10/50], Step [25/59], Loss: 2210.0740
-Epoch [10/50], Step [50/59], Loss: 3402.9800
-Epoch [11/50], Step [25/59], Loss: 2741.8948
-Epoch [11/50], Step [50/59], Loss: 3206.4985
-Epoch [12/50], Step [25/59], Loss: 2415.5625
-Epoch [12/50], Step [50/59], Loss: 2177.9507
-Epoch [13/50], Step [25/59], Loss: 1662.4773
-Epoch [13/50], Step [50/59], Loss: 1680.6573
-Epoch [14/50], Step [25/59], Loss: 1548.5562
-Epoch [14/50], Step [50/59], Loss: 2713.8225
-Epoch [15/50], Step [25/59], Loss: 2187.0803
-Epoch [15/50], Step [50/59], Loss: 1674.0342
-Epoch [16/50], Step [25/59], Loss: 1769.5007
-Epoch [16/50], Step [50/59], Loss: 2045.2024
-Epoch [17/50], Step [25/59], Loss: 3021.2012
-Epoch [17/50], Step [50/59], Loss: 1703.0085
-Epoch [18/50], Step [25/59], Loss: 3330.7415
-Epoch [18/50], Step [50/59], Loss: 1420.0610
-Epoch [19/50], Step [25/59], Loss: 1471.5759
-Epoch [19/50], Step [50/59], Loss: 1033.9541
-Epoch [20/50], Step [25/59], Loss: 1492.4045
-Epoch [20/50], Step [50/59], Loss: 3032.1279
-Epoch [21/50], Step [25/59], Loss: 1551.7230
-Epoch [21/50], Step [50/59], Loss: 1796.8259
-Epoch [22/50], Step [25/59], Loss: 1293.2883
-Epoch [22/50], Step [50/59], Loss: 1090.9050
-Epoch [23/50], Step [25/59], Loss: 3278.5603
-Epoch [23/50], Step [50/59], Loss: 1739.6244
-Epoch [24/50], Step [25/59], Loss: 1199.3751
-Epoch [24/50], Step [50/59], Loss: 3242.9282
-Epoch [25/50], Step [25/59], Loss: 1555.6025
-Epoch [25/50], Step [50/59], Loss: 1953.9680
-Epoch [26/50], Step [25/59], Loss: 2201.6475
-Epoch [26/50], Step [50/59], Loss: 2995.3154
-Epoch [27/50], Step [25/59], Loss: 1092.8025
-Epoch [27/50], Step [50/59], Loss: 2238.8831
-Epoch [28/50], Step [25/59], Loss: 1692.9086
-Epoch [28/50], Step [50/59], Loss: 1118.1545
-Epoch [29/50], Step [25/59], Loss: 2478.2812
-Epoch [29/50], Step [50/59], Loss: 3837.1018
-Epoch [30/50], Step [25/59], Loss: 1287.5830
-Epoch [30/50], Step [50/59], Loss: 2036.0077
-Epoch [31/50], Step [25/59], Loss: 1073.4575
-Epoch [31/50], Step [50/59], Loss: 1363.4940
-Epoch [32/50], Step [25/59], Loss: 1434.7568
-Epoch [32/50], Step [50/59], Loss: 2594.8640
-Epoch [33/50], Step [25/59], Loss: 1843.0010
-Epoch [33/50], Step [50/59], Loss: 1293.5758
-Epoch [34/50], Step [25/59], Loss: 1385.8041
-Epoch [34/50], Step [50/59], Loss: 788.2869
-Epoch [35/50], Step [25/59], Loss: 889.6630
-Epoch [35/50], Step [50/59], Loss: 973.5500
-Epoch [36/50], Step [25/59], Loss: 971.8638
-Epoch [36/50], Step [50/59], Loss: 1094.1011
-Epoch [37/50], Step [25/59], Loss: 1927.9565
-Epoch [37/50], Step [50/59], Loss: 2092.6736
-Epoch [38/50], Step [25/59], Loss: 906.4342
-Epoch [38/50], Step [50/59], Loss: 1693.9393
-Epoch [39/50], Step [25/59], Loss: 1078.2429
-Epoch [39/50], Step [50/59], Loss: 558.7194
-Epoch [40/50], Step [25/59], Loss: 1297.7245
-Epoch [40/50], Step [50/59], Loss: 1033.6523
-Epoch [41/50], Step [25/59], Loss: 718.0159
-Epoch [41/50], Step [50/59], Loss: 1333.4761
-Epoch [42/50], Step [25/59], Loss: 1777.5038
-Epoch [42/50], Step [50/59], Loss: 1110.0748
-Epoch [43/50], Step [25/59], Loss: 1176.3523
-Epoch [43/50], Step [50/59], Loss: 818.8661
-Epoch [44/50], Step [25/59], Loss: 1649.3914
-Epoch [44/50], Step [50/59], Loss: 1939.7833
-Epoch [45/50], Step [25/59], Loss: 1566.1282
-Epoch [45/50], Step [50/59], Loss: 1103.0435
-Epoch [46/50], Step [25/59], Loss: 2309.3604
-Epoch [46/50], Step [50/59], Loss: 1111.9189
-Epoch [47/50], Step [25/59], Loss: 2344.0852
-Epoch [47/50], Step [50/59], Loss: 1134.6317
-Epoch [48/50], Step [25/59], Loss: 2302.7439
-Epoch [48/50], Step [50/59], Loss: 1324.2415
-Epoch [49/50], Step [25/59], Loss: 450.5475
-Epoch [49/50], Step [50/59], Loss: 2111.6340
-Epoch [50/50], Step [25/59], Loss: 921.9489
-Epoch [50/50], Step [50/59], Loss: 4339.7251
-48
-LOADING DATA...
-END LOAD DATA
-Loss: 1799.8539
-MIN LOSS: 1799.8538818359375
-TOTAL LOSS: 1799.8538818359375
-AVG LOSS:37.49695587158203
-Current model seq_len:4
-2917
+Loss: 5885.6699
+Loss: 2007.1830
+Loss: 49691.2461
+Loss: 619863.7500
+Loss: 57346.1055
+MIN LOSS: 2007.1829833984375
+TOTAL LOSS: 57346.10546875
+AVG LOSS:146958.7908935547
+CURRNET MODEL seq_len: 1
+CURRENT MODEL: TwoEyesSameLayer
+./rnn/train/60/
+2453
 LOADING DATA...
 END LOAD DATA
 TRAIN...
-Epoch [1/50], Step [25/59], Loss: 108617.5312
-Epoch [1/50], Step [50/59], Loss: 108355.9219
-Epoch [2/50], Step [25/59], Loss: 124476.9062
-Epoch [2/50], Step [50/59], Loss: 81584.9219
-Epoch [3/50], Step [25/59], Loss: 91628.6328
-Epoch [3/50], Step [50/59], Loss: 67476.5859
-Epoch [4/50], Step [25/59], Loss: 67927.0547
-Epoch [4/50], Step [50/59], Loss: 72737.7031
-Epoch [5/50], Step [25/59], Loss: 65350.0586
-Epoch [5/50], Step [50/59], Loss: 35969.6289
-Epoch [6/50], Step [25/59], Loss: 25586.6094
-Epoch [6/50], Step [50/59], Loss: 30955.0391
-Epoch [7/50], Step [25/59], Loss: 13280.4248
-Epoch [7/50], Step [50/59], Loss: 8227.5205
-Epoch [8/50], Step [25/59], Loss: 10312.9805
-Epoch [8/50], Step [50/59], Loss: 10402.9590
-Epoch [9/50], Step [25/59], Loss: 4357.1997
-Epoch [9/50], Step [50/59], Loss: 2724.3462
-Epoch [10/50], Step [25/59], Loss: 2570.1855
-Epoch [10/50], Step [50/59], Loss: 2248.3877
-Epoch [11/50], Step [25/59], Loss: 3495.5256
-Epoch [11/50], Step [50/59], Loss: 4041.1187
-Epoch [12/50], Step [25/59], Loss: 1632.0162
-Epoch [12/50], Step [50/59], Loss: 1950.5396
-Epoch [13/50], Step [25/59], Loss: 1182.8656
-Epoch [13/50], Step [50/59], Loss: 1474.8986
-Epoch [14/50], Step [25/59], Loss: 1443.5675
-Epoch [14/50], Step [50/59], Loss: 1957.3339
-Epoch [15/50], Step [25/59], Loss: 1961.7551
-Epoch [15/50], Step [50/59], Loss: 1752.4005
-Epoch [16/50], Step [25/59], Loss: 1692.8059
-Epoch [16/50], Step [50/59], Loss: 1688.9180
-Epoch [17/50], Step [25/59], Loss: 1360.9279
-Epoch [17/50], Step [50/59], Loss: 2587.1914
-Epoch [18/50], Step [25/59], Loss: 1444.8601
-Epoch [18/50], Step [50/59], Loss: 1921.8650
-Epoch [19/50], Step [25/59], Loss: 1699.6147
-Epoch [19/50], Step [50/59], Loss: 3380.2590
-Epoch [20/50], Step [25/59], Loss: 2012.4789
-Epoch [20/50], Step [50/59], Loss: 2724.3948
-Epoch [21/50], Step [25/59], Loss: 2069.0806
-Epoch [21/50], Step [50/59], Loss: 1423.0702
-Epoch [22/50], Step [25/59], Loss: 1620.8378
-Epoch [22/50], Step [50/59], Loss: 973.0048
-Epoch [23/50], Step [25/59], Loss: 2437.1565
-Epoch [23/50], Step [50/59], Loss: 1053.7025
-Epoch [24/50], Step [25/59], Loss: 1330.5830
-Epoch [24/50], Step [50/59], Loss: 2442.5383
-Epoch [25/50], Step [25/59], Loss: 2377.1252
-Epoch [25/50], Step [50/59], Loss: 1068.1469
-Epoch [26/50], Step [25/59], Loss: 1497.3885
-Epoch [26/50], Step [50/59], Loss: 1725.0604
-Epoch [27/50], Step [25/59], Loss: 1126.4321
-Epoch [27/50], Step [50/59], Loss: 1070.7006
-Epoch [28/50], Step [25/59], Loss: 1195.0787
-Epoch [28/50], Step [50/59], Loss: 1150.5112
-Epoch [29/50], Step [25/59], Loss: 2643.4304
-Epoch [29/50], Step [50/59], Loss: 1651.3406
-Epoch [30/50], Step [25/59], Loss: 3801.2703
-Epoch [30/50], Step [50/59], Loss: 1536.6797
-Epoch [31/50], Step [25/59], Loss: 892.8160
-Epoch [31/50], Step [50/59], Loss: 1031.2676
-Epoch [32/50], Step [25/59], Loss: 1131.4515
-Epoch [32/50], Step [50/59], Loss: 2717.6292
-Epoch [33/50], Step [25/59], Loss: 1372.8851
-Epoch [33/50], Step [50/59], Loss: 1463.8252
-Epoch [34/50], Step [25/59], Loss: 1458.4017
-Epoch [34/50], Step [50/59], Loss: 1386.1813
-Epoch [35/50], Step [25/59], Loss: 2817.2749
-Epoch [35/50], Step [50/59], Loss: 1315.7170
-Epoch [36/50], Step [25/59], Loss: 1992.8538
-Epoch [36/50], Step [50/59], Loss: 4858.3711
-Epoch [37/50], Step [25/59], Loss: 983.8865
-Epoch [37/50], Step [50/59], Loss: 971.7340
-Epoch [38/50], Step [25/59], Loss: 946.9644
-Epoch [38/50], Step [50/59], Loss: 1069.9756
-Epoch [39/50], Step [25/59], Loss: 865.2570
-Epoch [39/50], Step [50/59], Loss: 1263.2999
-Epoch [40/50], Step [25/59], Loss: 1788.9003
-Epoch [40/50], Step [50/59], Loss: 2417.7090
-Epoch [41/50], Step [25/59], Loss: 1060.8135
-Epoch [41/50], Step [50/59], Loss: 778.4545
-Epoch [42/50], Step [25/59], Loss: 659.3870
-Epoch [42/50], Step [50/59], Loss: 1773.7864
-Epoch [43/50], Step [25/59], Loss: 1775.3521
-Epoch [43/50], Step [50/59], Loss: 1395.7366
-Epoch [44/50], Step [25/59], Loss: 1192.3949
-Epoch [44/50], Step [50/59], Loss: 814.1937
-Epoch [45/50], Step [25/59], Loss: 1198.1410
-Epoch [45/50], Step [50/59], Loss: 1004.3489
-Epoch [46/50], Step [25/59], Loss: 951.3404
-Epoch [46/50], Step [50/59], Loss: 1196.0507
-Epoch [47/50], Step [25/59], Loss: 1548.2963
-Epoch [47/50], Step [50/59], Loss: 1472.2930
-Epoch [48/50], Step [25/59], Loss: 1249.8354
-Epoch [48/50], Step [50/59], Loss: 667.5801
-Epoch [49/50], Step [25/59], Loss: 1804.3588
-Epoch [49/50], Step [50/59], Loss: 922.9907
-Epoch [50/50], Step [25/59], Loss: 2260.0127
-Epoch [50/50], Step [50/59], Loss: 1932.6234
-48
+Epoch [1/50], Step [25/50], Loss: 127692.4609
+Epoch [1/50], Step [50/50], Loss: 38473.0312
+Epoch [2/50], Step [25/50], Loss: 110990.8906
+Epoch [2/50], Step [50/50], Loss: 35021.5664
+Epoch [3/50], Step [25/50], Loss: 74232.9062
+Epoch [3/50], Step [50/50], Loss: 33998.9141
+Epoch [4/50], Step [25/50], Loss: 95576.3984
+Epoch [4/50], Step [50/50], Loss: 152575.2656
+Epoch [5/50], Step [25/50], Loss: 57091.5742
+Epoch [5/50], Step [50/50], Loss: 34849.1484
+Epoch [6/50], Step [25/50], Loss: 34738.2578
+Epoch [6/50], Step [50/50], Loss: 48335.9492
+Epoch [7/50], Step [25/50], Loss: 24160.9004
+Epoch [7/50], Step [50/50], Loss: 67480.4688
+Epoch [8/50], Step [25/50], Loss: 20659.7305
+Epoch [8/50], Step [50/50], Loss: 3976.3474
+Epoch [9/50], Step [25/50], Loss: 14862.9209
+Epoch [9/50], Step [50/50], Loss: 25160.8809
+Epoch [10/50], Step [25/50], Loss: 7669.2095
+Epoch [10/50], Step [50/50], Loss: 10432.1631
+Epoch [11/50], Step [25/50], Loss: 4282.8716
+Epoch [11/50], Step [50/50], Loss: 8277.6533
+Epoch [12/50], Step [25/50], Loss: 2168.2129
+Epoch [12/50], Step [50/50], Loss: 8088.9878
+Epoch [13/50], Step [25/50], Loss: 3460.1328
+Epoch [13/50], Step [50/50], Loss: 6324.9688
+Epoch [14/50], Step [25/50], Loss: 1642.3533
+Epoch [14/50], Step [50/50], Loss: 40582.2773
+Epoch [15/50], Step [25/50], Loss: 2553.7649
+Epoch [15/50], Step [50/50], Loss: 9711.0078
+Epoch [16/50], Step [25/50], Loss: 2665.6616
+Epoch [16/50], Step [50/50], Loss: 42712.9336
+Epoch [17/50], Step [25/50], Loss: 3026.1318
+Epoch [17/50], Step [50/50], Loss: 11039.2773
+Epoch [18/50], Step [25/50], Loss: 2010.3137
+Epoch [18/50], Step [50/50], Loss: 21828.3887
+Epoch [19/50], Step [25/50], Loss: 2570.2065
+Epoch [19/50], Step [50/50], Loss: 30734.5684
+Epoch [20/50], Step [25/50], Loss: 2644.5547
+Epoch [20/50], Step [50/50], Loss: 15161.9600
+Epoch [21/50], Step [25/50], Loss: 1884.9907
+Epoch [21/50], Step [50/50], Loss: 34664.5117
+Epoch [22/50], Step [25/50], Loss: 2077.2971
+Epoch [22/50], Step [50/50], Loss: 17392.0723
+Epoch [23/50], Step [25/50], Loss: 1818.0164
+Epoch [23/50], Step [50/50], Loss: 6256.8530
+Epoch [24/50], Step [25/50], Loss: 1693.8857
+Epoch [24/50], Step [50/50], Loss: 18002.5410
+Epoch [25/50], Step [25/50], Loss: 1257.3749
+Epoch [25/50], Step [50/50], Loss: 3053.5332
+Epoch [26/50], Step [25/50], Loss: 2479.1775
+Epoch [26/50], Step [50/50], Loss: 1087.3859
+Epoch [27/50], Step [25/50], Loss: 922.7514
+Epoch [27/50], Step [50/50], Loss: 73921.1484
+Epoch [28/50], Step [25/50], Loss: 5855.5464
+Epoch [28/50], Step [50/50], Loss: 5610.1909
+Epoch [29/50], Step [25/50], Loss: 4551.0029
+Epoch [29/50], Step [50/50], Loss: 4218.6323
+Epoch [30/50], Step [25/50], Loss: 1846.3085
+Epoch [30/50], Step [50/50], Loss: 10737.3193
+Epoch [31/50], Step [25/50], Loss: 2038.6598
+Epoch [31/50], Step [50/50], Loss: 20697.3418
+Epoch [32/50], Step [25/50], Loss: 3671.3601
+Epoch [32/50], Step [50/50], Loss: 43195.8984
+Epoch [33/50], Step [25/50], Loss: 1444.3750
+Epoch [33/50], Step [50/50], Loss: 8362.3916
+Epoch [34/50], Step [25/50], Loss: 1663.4487
+Epoch [34/50], Step [50/50], Loss: 3378.6653
+Epoch [35/50], Step [25/50], Loss: 1254.0050
+Epoch [35/50], Step [50/50], Loss: 8478.4697
+Epoch [36/50], Step [25/50], Loss: 2604.3230
+Epoch [36/50], Step [50/50], Loss: 5373.1167
+Epoch [37/50], Step [25/50], Loss: 1813.3877
+Epoch [37/50], Step [50/50], Loss: 11095.8037
+Epoch [38/50], Step [25/50], Loss: 1588.5894
+Epoch [38/50], Step [50/50], Loss: 15373.8828
+Epoch [39/50], Step [25/50], Loss: 2537.7944
+Epoch [39/50], Step [50/50], Loss: 24413.7988
+Epoch [40/50], Step [25/50], Loss: 1098.0413
+Epoch [40/50], Step [50/50], Loss: 25155.8105
+Epoch [41/50], Step [25/50], Loss: 1744.3540
+Epoch [41/50], Step [50/50], Loss: 13728.0000
+Epoch [42/50], Step [25/50], Loss: 4075.9116
+Epoch [42/50], Step [50/50], Loss: 11913.3350
+Epoch [43/50], Step [25/50], Loss: 1546.1313
+Epoch [43/50], Step [50/50], Loss: 9357.4033
+Epoch [44/50], Step [25/50], Loss: 924.9149
+Epoch [44/50], Step [50/50], Loss: 11281.1445
+Epoch [45/50], Step [25/50], Loss: 3817.2212
+Epoch [45/50], Step [50/50], Loss: 34457.4375
+Epoch [46/50], Step [25/50], Loss: 2588.7844
+Epoch [46/50], Step [50/50], Loss: 7199.2563
+Epoch [47/50], Step [25/50], Loss: 1352.7247
+Epoch [47/50], Step [50/50], Loss: 6931.0337
+Epoch [48/50], Step [25/50], Loss: 1453.0074
+Epoch [48/50], Step [50/50], Loss: 9471.1260
+Epoch [49/50], Step [25/50], Loss: 1888.9702
+Epoch [49/50], Step [50/50], Loss: 16847.0488
+Epoch [50/50], Step [25/50], Loss: 883.4316
+Epoch [50/50], Step [50/50], Loss: 21166.5020
+rnn/test/60/
+248
 LOADING DATA...
 END LOAD DATA
-Loss: 1670.3506
-MIN LOSS: 1670.3505859375
-TOTAL LOSS: 1670.3505859375
-AVG LOSS:34.798970540364586
-Current model seq_len:16
-2917
-LOADING DATA...
-END LOAD DATA
-TRAIN...
-Epoch [1/50], Step [25/59], Loss: 132089.9219
-Epoch [1/50], Step [50/59], Loss: 123398.4297
-Epoch [2/50], Step [25/59], Loss: 118277.4062
-Epoch [2/50], Step [50/59], Loss: 102834.4766
-Epoch [3/50], Step [25/59], Loss: 98940.9219
-Epoch [3/50], Step [50/59], Loss: 77329.4375
-Epoch [4/50], Step [25/59], Loss: 66174.7266
-Epoch [4/50], Step [50/59], Loss: 53985.9844
-Epoch [5/50], Step [25/59], Loss: 53979.7617
-Epoch [5/50], Step [50/59], Loss: 44862.1211
-Epoch [6/50], Step [25/59], Loss: 40560.1484
-Epoch [6/50], Step [50/59], Loss: 18253.1641
-Epoch [7/50], Step [25/59], Loss: 21254.8047
-Epoch [7/50], Step [50/59], Loss: 20741.1973
-Epoch [8/50], Step [25/59], Loss: 8637.2822
-Epoch [8/50], Step [50/59], Loss: 5638.8330
-Epoch [9/50], Step [25/59], Loss: 3749.8159
-Epoch [9/50], Step [50/59], Loss: 2966.6653
-Epoch [10/50], Step [25/59], Loss: 2707.1533
-Epoch [10/50], Step [50/59], Loss: 3731.7356
-Epoch [11/50], Step [25/59], Loss: 2376.4053
-Epoch [11/50], Step [50/59], Loss: 2424.9099
-Epoch [12/50], Step [25/59], Loss: 4039.3574
-Epoch [12/50], Step [50/59], Loss: 1925.1066
-Epoch [13/50], Step [25/59], Loss: 3402.0684
-Epoch [13/50], Step [50/59], Loss: 2059.5566
-Epoch [14/50], Step [25/59], Loss: 884.0575
-Epoch [14/50], Step [50/59], Loss: 1480.8417
-Epoch [15/50], Step [25/59], Loss: 2338.1492
-Epoch [15/50], Step [50/59], Loss: 3249.7893
-Epoch [16/50], Step [25/59], Loss: 1818.0906
-Epoch [16/50], Step [50/59], Loss: 1773.0033
-Epoch [17/50], Step [25/59], Loss: 1579.9152
-Epoch [17/50], Step [50/59], Loss: 2171.7429
-Epoch [18/50], Step [25/59], Loss: 1586.8475
-Epoch [18/50], Step [50/59], Loss: 1139.3904
-Epoch [19/50], Step [25/59], Loss: 915.3978
-Epoch [19/50], Step [50/59], Loss: 1200.7192
-Epoch [20/50], Step [25/59], Loss: 1973.2322
-Epoch [20/50], Step [50/59], Loss: 3624.9082
-Epoch [21/50], Step [25/59], Loss: 1116.2671
-Epoch [21/50], Step [50/59], Loss: 1881.4463
-Epoch [22/50], Step [25/59], Loss: 1658.3239
-Epoch [22/50], Step [50/59], Loss: 5244.6475
-Epoch [23/50], Step [25/59], Loss: 739.4026
-Epoch [23/50], Step [50/59], Loss: 795.5703
-Epoch [24/50], Step [25/59], Loss: 1727.2030
-Epoch [24/50], Step [50/59], Loss: 1787.5369
-Epoch [25/50], Step [25/59], Loss: 2575.4390
-Epoch [25/50], Step [50/59], Loss: 1502.2365
-Epoch [26/50], Step [25/59], Loss: 2103.4990
-Epoch [26/50], Step [50/59], Loss: 2511.8352
-Epoch [27/50], Step [25/59], Loss: 1622.2295
-Epoch [27/50], Step [50/59], Loss: 989.8993
-Epoch [28/50], Step [25/59], Loss: 1419.3157
-Epoch [28/50], Step [50/59], Loss: 1650.2227
-Epoch [29/50], Step [25/59], Loss: 1443.9950
-Epoch [29/50], Step [50/59], Loss: 2273.8708
-Epoch [30/50], Step [25/59], Loss: 894.8943
-Epoch [30/50], Step [50/59], Loss: 953.2335
-Epoch [31/50], Step [25/59], Loss: 1317.8939
-Epoch [31/50], Step [50/59], Loss: 2144.9421
-Epoch [32/50], Step [25/59], Loss: 2156.2771
-Epoch [32/50], Step [50/59], Loss: 862.1208
-Epoch [33/50], Step [25/59], Loss: 3493.0623
-Epoch [33/50], Step [50/59], Loss: 2142.1375
-Epoch [34/50], Step [25/59], Loss: 827.4100
-Epoch [34/50], Step [50/59], Loss: 2279.9048
-Epoch [35/50], Step [25/59], Loss: 970.6307
-Epoch [35/50], Step [50/59], Loss: 1742.2767
-Epoch [36/50], Step [25/59], Loss: 490.4791
-Epoch [36/50], Step [50/59], Loss: 2467.2429
-Epoch [37/50], Step [25/59], Loss: 694.8066
-Epoch [37/50], Step [50/59], Loss: 1461.2446
-Epoch [38/50], Step [25/59], Loss: 921.8406
-Epoch [38/50], Step [50/59], Loss: 1402.4644
-Epoch [39/50], Step [25/59], Loss: 431.5888
-Epoch [39/50], Step [50/59], Loss: 708.2846
-Epoch [40/50], Step [25/59], Loss: 1364.3197
-Epoch [40/50], Step [50/59], Loss: 1113.4263
-Epoch [41/50], Step [25/59], Loss: 1113.2074
-Epoch [41/50], Step [50/59], Loss: 1514.6821
-Epoch [42/50], Step [25/59], Loss: 1345.7390
-Epoch [42/50], Step [50/59], Loss: 1496.4524
-Epoch [43/50], Step [25/59], Loss: 697.6722
-Epoch [43/50], Step [50/59], Loss: 834.0921
-Epoch [44/50], Step [25/59], Loss: 958.0822
-Epoch [44/50], Step [50/59], Loss: 1703.0428
-Epoch [45/50], Step [25/59], Loss: 1367.1211
-Epoch [45/50], Step [50/59], Loss: 1012.3831
-Epoch [46/50], Step [25/59], Loss: 1005.6516
-Epoch [46/50], Step [50/59], Loss: 589.2656
-Epoch [47/50], Step [25/59], Loss: 901.8017
-Epoch [47/50], Step [50/59], Loss: 624.3449
-Epoch [48/50], Step [25/59], Loss: 630.4493
-Epoch [48/50], Step [50/59], Loss: 1624.2540
-Epoch [49/50], Step [25/59], Loss: 626.6837
-Epoch [49/50], Step [50/59], Loss: 1022.3726
-Epoch [50/50], Step [25/59], Loss: 449.6906
-Epoch [50/50], Step [50/59], Loss: 892.8003
-48
-LOADING DATA...
-END LOAD DATA
-Loss: 2472.9666
-MIN LOSS: 2472.966552734375
-TOTAL LOSS: 2472.966552734375
-AVG LOSS:51.52013651529948
-Current model seq_len:32
-2917
+Loss: 18534.5566
+Loss: 18796.8984
+Loss: 16582.7402
+Loss: 16856.8887
+Loss: 159176.0000
+MIN LOSS: 16582.740234375
+TOTAL LOSS: 159176.0
+AVG LOSS:45989.416796875
+CURRNET MODEL seq_len: 2
+CURRENT MODEL: TwoEyes
+./rnn/train/60/
+2453
 LOADING DATA...
 END LOAD DATA
 TRAIN...
+Epoch [1/50], Step [25/50], Loss: 115861.8828
+Epoch [1/50], Step [50/50], Loss: 69123.1016
+Epoch [2/50], Step [25/50], Loss: 112603.0781
+Epoch [2/50], Step [50/50], Loss: 90504.8750
+Epoch [3/50], Step [25/50], Loss: 87058.6484
+Epoch [3/50], Step [50/50], Loss: 101137.1250
+Epoch [4/50], Step [25/50], Loss: 62572.7734
+Epoch [4/50], Step [50/50], Loss: 166598.5156
+Epoch [5/50], Step [25/50], Loss: 56885.5000
+Epoch [5/50], Step [50/50], Loss: 88460.8359
+Epoch [6/50], Step [25/50], Loss: 51025.9062
+Epoch [6/50], Step [50/50], Loss: 42810.9805
+Epoch [7/50], Step [25/50], Loss: 22262.3477
+Epoch [7/50], Step [50/50], Loss: 2768.4336
+Epoch [8/50], Step [25/50], Loss: 17922.1992
+Epoch [8/50], Step [50/50], Loss: 12256.4912
+Epoch [9/50], Step [25/50], Loss: 7715.2046
+Epoch [9/50], Step [50/50], Loss: 20212.8262
+Epoch [10/50], Step [25/50], Loss: 5752.3506
+Epoch [10/50], Step [50/50], Loss: 6789.4102
+Epoch [11/50], Step [25/50], Loss: 4026.1921
+Epoch [11/50], Step [50/50], Loss: 10159.6084
+Epoch [12/50], Step [25/50], Loss: 1835.7731
+Epoch [12/50], Step [50/50], Loss: 24801.0859
+Epoch [13/50], Step [25/50], Loss: 3435.6086
+Epoch [13/50], Step [50/50], Loss: 33894.1445
+Epoch [14/50], Step [25/50], Loss: 3563.2380
+Epoch [14/50], Step [50/50], Loss: 22056.0566
+Epoch [15/50], Step [25/50], Loss: 3350.4495
+Epoch [15/50], Step [50/50], Loss: 1942.7308
+Epoch [16/50], Step [25/50], Loss: 5174.9360
+Epoch [16/50], Step [50/50], Loss: 4321.8979
+Epoch [17/50], Step [25/50], Loss: 2974.5527
+Epoch [17/50], Step [50/50], Loss: 29900.0293
+Epoch [18/50], Step [25/50], Loss: 3475.9746
+Epoch [18/50], Step [50/50], Loss: 18622.0176
+Epoch [19/50], Step [25/50], Loss: 2251.6729
+Epoch [19/50], Step [50/50], Loss: 41220.6758
+Epoch [20/50], Step [25/50], Loss: 2402.2300
+Epoch [20/50], Step [50/50], Loss: 12848.4648
+Epoch [21/50], Step [25/50], Loss: 2165.2273
+Epoch [21/50], Step [50/50], Loss: 5334.7798
+Epoch [22/50], Step [25/50], Loss: 1768.0181
+Epoch [22/50], Step [50/50], Loss: 10189.4023
+Epoch [23/50], Step [25/50], Loss: 1995.9797
+Epoch [23/50], Step [50/50], Loss: 4809.7549
+Epoch [24/50], Step [25/50], Loss: 1259.3444
+Epoch [24/50], Step [50/50], Loss: 28148.7793
+Epoch [25/50], Step [25/50], Loss: 1420.6663
+Epoch [25/50], Step [50/50], Loss: 4486.5820
+Epoch [26/50], Step [25/50], Loss: 3694.2776
+Epoch [26/50], Step [50/50], Loss: 19746.1934
+Epoch [27/50], Step [25/50], Loss: 2713.1252
+Epoch [27/50], Step [50/50], Loss: 11207.8838
+Epoch [28/50], Step [25/50], Loss: 2660.0432
+Epoch [28/50], Step [50/50], Loss: 15696.8594
+Epoch [29/50], Step [25/50], Loss: 2414.1582
+Epoch [29/50], Step [50/50], Loss: 17873.4355
+Epoch [30/50], Step [25/50], Loss: 1280.5146
+Epoch [30/50], Step [50/50], Loss: 4067.2083
+Epoch [31/50], Step [25/50], Loss: 2281.4941
+Epoch [31/50], Step [50/50], Loss: 3533.2766
+Epoch [32/50], Step [25/50], Loss: 1040.4934
+Epoch [32/50], Step [50/50], Loss: 9484.3203
+Epoch [33/50], Step [25/50], Loss: 1457.1371
+Epoch [33/50], Step [50/50], Loss: 18017.6504
+Epoch [34/50], Step [25/50], Loss: 1827.1449
+Epoch [34/50], Step [50/50], Loss: 7956.4819
+Epoch [35/50], Step [25/50], Loss: 1791.0903
+Epoch [35/50], Step [50/50], Loss: 8367.4014
+Epoch [36/50], Step [25/50], Loss: 1128.8519
+Epoch [36/50], Step [50/50], Loss: 15283.6104
+Epoch [37/50], Step [25/50], Loss: 1710.5856
+Epoch [37/50], Step [50/50], Loss: 2424.8457
+Epoch [38/50], Step [25/50], Loss: 928.3381
+Epoch [38/50], Step [50/50], Loss: 13937.2979
+Epoch [39/50], Step [25/50], Loss: 1076.5303
+Epoch [39/50], Step [50/50], Loss: 11180.0049
+Epoch [40/50], Step [25/50], Loss: 991.0047
+Epoch [40/50], Step [50/50], Loss: 18653.6152
+Epoch [41/50], Step [25/50], Loss: 2139.5054
+Epoch [41/50], Step [50/50], Loss: 11819.3125
+Epoch [42/50], Step [25/50], Loss: 2216.4438
+Epoch [42/50], Step [50/50], Loss: 25373.7715
+Epoch [43/50], Step [25/50], Loss: 4515.8779
+Epoch [43/50], Step [50/50], Loss: 17674.6250
+Epoch [44/50], Step [25/50], Loss: 926.4716
+Epoch [44/50], Step [50/50], Loss: 2572.7827
+Epoch [45/50], Step [25/50], Loss: 1292.1195
+Epoch [45/50], Step [50/50], Loss: 9042.9697
+Epoch [46/50], Step [25/50], Loss: 3083.5522
+Epoch [46/50], Step [50/50], Loss: 2817.0164
+Epoch [47/50], Step [25/50], Loss: 2302.3313
+Epoch [47/50], Step [50/50], Loss: 5382.5659
+Epoch [48/50], Step [25/50], Loss: 3642.5527
+Epoch [48/50], Step [50/50], Loss: 15819.2930
+Epoch [49/50], Step [25/50], Loss: 811.9141
+Epoch [49/50], Step [50/50], Loss: 14848.0469
+Epoch [50/50], Step [25/50], Loss: 1273.4044
+Epoch [50/50], Step [50/50], Loss: 19411.4863
+rnn/test/60/
+248
+LOADING DATA...
+END LOAD DATA
+Loss: 2467.7639
+Loss: 2559.4998
+Loss: 2420.9158
+Loss: 2584.7979
+Loss: 1267.6606
+MIN LOSS: 1267.66064453125
+TOTAL LOSS: 1267.66064453125
+AVG LOSS:2260.127587890625
+CURRNET MODEL seq_len: 2
+CURRENT MODEL: TwoEyesSameLayer
+./rnn/train/60/
+2453
+LOADING DATA...
+END LOAD DATA
+TRAIN...
+Epoch [1/50], Step [25/50], Loss: 98492.7031
+Epoch [1/50], Step [50/50], Loss: 67504.4766
+Epoch [2/50], Step [25/50], Loss: 116701.0469
+Epoch [2/50], Step [50/50], Loss: 60389.3750
+Epoch [3/50], Step [25/50], Loss: 88895.5938
+Epoch [3/50], Step [50/50], Loss: 107920.3828
+Epoch [4/50], Step [25/50], Loss: 63964.4102
+Epoch [4/50], Step [50/50], Loss: 50094.0195
+Epoch [5/50], Step [25/50], Loss: 60803.0469
+Epoch [5/50], Step [50/50], Loss: 66765.8281
+Epoch [6/50], Step [25/50], Loss: 36490.0742
+Epoch [6/50], Step [50/50], Loss: 15482.8896
+Epoch [7/50], Step [25/50], Loss: 21331.1953
+Epoch [7/50], Step [50/50], Loss: 77163.4531
+Epoch [8/50], Step [25/50], Loss: 17364.3184
+Epoch [8/50], Step [50/50], Loss: 13069.4951
+Epoch [9/50], Step [25/50], Loss: 11806.9414
+Epoch [9/50], Step [50/50], Loss: 5857.8843
+Epoch [10/50], Step [25/50], Loss: 5563.3599
+Epoch [10/50], Step [50/50], Loss: 3560.6221
+Epoch [11/50], Step [25/50], Loss: 3060.2988
+Epoch [11/50], Step [50/50], Loss: 52909.2070
+Epoch [12/50], Step [25/50], Loss: 3251.6497
+Epoch [12/50], Step [50/50], Loss: 19119.5781
+Epoch [13/50], Step [25/50], Loss: 2407.7468
+Epoch [13/50], Step [50/50], Loss: 36392.2930
+Epoch [14/50], Step [25/50], Loss: 1734.7178
+Epoch [14/50], Step [50/50], Loss: 19203.6934
+Epoch [15/50], Step [25/50], Loss: 1903.0837
+Epoch [15/50], Step [50/50], Loss: 11653.0732
+Epoch [16/50], Step [25/50], Loss: 1880.8788
+Epoch [16/50], Step [50/50], Loss: 12376.8447
+Epoch [17/50], Step [25/50], Loss: 1725.1892
+Epoch [17/50], Step [50/50], Loss: 27734.0254
+Epoch [18/50], Step [25/50], Loss: 2991.5103
+Epoch [18/50], Step [50/50], Loss: 10928.7979
+Epoch [19/50], Step [25/50], Loss: 3321.1047
+Epoch [19/50], Step [50/50], Loss: 19292.1895
+Epoch [20/50], Step [25/50], Loss: 1504.3964
+Epoch [20/50], Step [50/50], Loss: 17302.5586
+Epoch [21/50], Step [25/50], Loss: 2254.6279
+Epoch [21/50], Step [50/50], Loss: 25234.3223
+Epoch [22/50], Step [25/50], Loss: 1131.9048
+Epoch [22/50], Step [50/50], Loss: 13468.6064
+Epoch [23/50], Step [25/50], Loss: 3864.7056
+Epoch [23/50], Step [50/50], Loss: 14892.3984
+Epoch [24/50], Step [25/50], Loss: 2037.0791
+Epoch [24/50], Step [50/50], Loss: 7400.7173
+Epoch [25/50], Step [25/50], Loss: 3216.5935
+Epoch [25/50], Step [50/50], Loss: 4697.1958
+Epoch [26/50], Step [25/50], Loss: 2161.5852
+Epoch [26/50], Step [50/50], Loss: 2789.1204
+Epoch [27/50], Step [25/50], Loss: 1617.1260
+Epoch [27/50], Step [50/50], Loss: 6063.2559
+Epoch [28/50], Step [25/50], Loss: 885.8568
+Epoch [28/50], Step [50/50], Loss: 3967.5339
+Epoch [29/50], Step [25/50], Loss: 1756.2582
+Epoch [29/50], Step [50/50], Loss: 3720.4922
+Epoch [30/50], Step [25/50], Loss: 2706.5706
+Epoch [30/50], Step [50/50], Loss: 3825.2278
+Epoch [31/50], Step [25/50], Loss: 2405.0938
+Epoch [31/50], Step [50/50], Loss: 11810.9209
+Epoch [32/50], Step [25/50], Loss: 906.7349
+Epoch [32/50], Step [50/50], Loss: 19117.3008
+Epoch [33/50], Step [25/50], Loss: 1076.8361
+Epoch [33/50], Step [50/50], Loss: 3514.5283
+Epoch [34/50], Step [25/50], Loss: 980.3926
+Epoch [34/50], Step [50/50], Loss: 2759.0583
+Epoch [35/50], Step [25/50], Loss: 1895.4569
+Epoch [35/50], Step [50/50], Loss: 56910.5938
+Epoch [36/50], Step [25/50], Loss: 2327.3005
+Epoch [36/50], Step [50/50], Loss: 3661.1348
+Epoch [37/50], Step [25/50], Loss: 1580.0173
+Epoch [37/50], Step [50/50], Loss: 6911.1968
+Epoch [38/50], Step [25/50], Loss: 1794.4034
+Epoch [38/50], Step [50/50], Loss: 11776.8252
+Epoch [39/50], Step [25/50], Loss: 2269.3062
+Epoch [39/50], Step [50/50], Loss: 14862.5361
+Epoch [40/50], Step [25/50], Loss: 1817.9956
+Epoch [40/50], Step [50/50], Loss: 8192.0811
+Epoch [41/50], Step [25/50], Loss: 1369.4156
+Epoch [41/50], Step [50/50], Loss: 19129.3398
+Epoch [42/50], Step [25/50], Loss: 1872.2828
+Epoch [42/50], Step [50/50], Loss: 6498.1484
+Epoch [43/50], Step [25/50], Loss: 1777.5565
+Epoch [43/50], Step [50/50], Loss: 4269.8652
+Epoch [44/50], Step [25/50], Loss: 1050.6875
+Epoch [44/50], Step [50/50], Loss: 7947.6333
+Epoch [45/50], Step [25/50], Loss: 1091.0216
+Epoch [45/50], Step [50/50], Loss: 5833.9526
+Epoch [46/50], Step [25/50], Loss: 1552.5875
+Epoch [46/50], Step [50/50], Loss: 9372.0127
+Epoch [47/50], Step [25/50], Loss: 1052.2694
+Epoch [47/50], Step [50/50], Loss: 23526.9629
+Epoch [48/50], Step [25/50], Loss: 1273.3158
+Epoch [48/50], Step [50/50], Loss: 8439.6436
+Epoch [49/50], Step [25/50], Loss: 1413.0457
+Epoch [49/50], Step [50/50], Loss: 14024.3408
+Epoch [50/50], Step [25/50], Loss: 1213.0914
+Epoch [50/50], Step [50/50], Loss: 8361.7607
+rnn/test/60/
+248
+LOADING DATA...
+END LOAD DATA
+Loss: 76727.3359
+Loss: 44294.5703
+Loss: 45638.8789
+Loss: 43509.9883
+Loss: 38547.5078
+MIN LOSS: 38547.5078125
+TOTAL LOSS: 38547.5078125
+AVG LOSS:49743.65625
+CURRNET MODEL seq_len: 4
+CURRENT MODEL: TwoEyes
+./rnn/train/60/
+2453
+LOADING DATA...
+END LOAD DATA
+TRAIN...
+Epoch [1/50], Step [25/50], Loss: 124086.7188
+Epoch [1/50], Step [50/50], Loss: 118291.4609
+Epoch [2/50], Step [25/50], Loss: 111165.7422
+Epoch [2/50], Step [50/50], Loss: 87532.9141
+Epoch [3/50], Step [25/50], Loss: 81252.6719
+Epoch [3/50], Step [50/50], Loss: 86650.5078
+Epoch [4/50], Step [25/50], Loss: 72134.0625
+Epoch [4/50], Step [50/50], Loss: 51160.5430
+Epoch [5/50], Step [25/50], Loss: 50662.6250
+Epoch [5/50], Step [50/50], Loss: 74551.4375
+Epoch [6/50], Step [25/50], Loss: 36273.8984
+Epoch [6/50], Step [50/50], Loss: 97047.3047
+Epoch [7/50], Step [25/50], Loss: 28657.6699
+Epoch [7/50], Step [50/50], Loss: 14132.2002
+Epoch [8/50], Step [25/50], Loss: 13472.7646
+Epoch [8/50], Step [50/50], Loss: 2496.9280
+Epoch [9/50], Step [25/50], Loss: 6629.2905
+Epoch [9/50], Step [50/50], Loss: 21362.9512
+Epoch [10/50], Step [25/50], Loss: 3807.5459
+Epoch [10/50], Step [50/50], Loss: 20965.6504
+Epoch [11/50], Step [25/50], Loss: 4991.3354
+Epoch [11/50], Step [50/50], Loss: 38811.0586
+Epoch [12/50], Step [25/50], Loss: 1816.5208
+Epoch [12/50], Step [50/50], Loss: 23551.5996
+Epoch [13/50], Step [25/50], Loss: 3230.4307
+Epoch [13/50], Step [50/50], Loss: 7801.7310
+Epoch [14/50], Step [25/50], Loss: 2752.4226
+Epoch [14/50], Step [50/50], Loss: 51416.9805
+Epoch [15/50], Step [25/50], Loss: 2888.9585
+Epoch [15/50], Step [50/50], Loss: 33147.2773
+Epoch [16/50], Step [25/50], Loss: 2126.5635
+Epoch [16/50], Step [50/50], Loss: 25469.4375
+Epoch [17/50], Step [25/50], Loss: 3072.8005
+Epoch [17/50], Step [50/50], Loss: 25935.5215
+Epoch [18/50], Step [25/50], Loss: 2929.7581
+Epoch [18/50], Step [50/50], Loss: 22640.4141
+Epoch [19/50], Step [25/50], Loss: 2319.4058
+Epoch [19/50], Step [50/50], Loss: 8391.5420
+Epoch [20/50], Step [25/50], Loss: 2129.5789
+Epoch [20/50], Step [50/50], Loss: 33954.0664
+Epoch [21/50], Step [25/50], Loss: 3414.6785
+Epoch [21/50], Step [50/50], Loss: 14683.6396
+Epoch [22/50], Step [25/50], Loss: 2624.5879
+Epoch [22/50], Step [50/50], Loss: 5126.9663
+Epoch [23/50], Step [25/50], Loss: 1921.6915
+Epoch [23/50], Step [50/50], Loss: 48455.2227
+Epoch [24/50], Step [25/50], Loss: 2526.7415
+Epoch [24/50], Step [50/50], Loss: 14450.9014
+Epoch [25/50], Step [25/50], Loss: 1714.2271
+Epoch [25/50], Step [50/50], Loss: 8615.3486
+Epoch [26/50], Step [25/50], Loss: 1477.5083
+Epoch [26/50], Step [50/50], Loss: 1108.1400
+Epoch [27/50], Step [25/50], Loss: 2383.4922
+Epoch [27/50], Step [50/50], Loss: 5617.4087
+Epoch [28/50], Step [25/50], Loss: 4486.7651
+Epoch [28/50], Step [50/50], Loss: 9280.9043
+Epoch [29/50], Step [25/50], Loss: 2211.8508
+Epoch [29/50], Step [50/50], Loss: 8243.4600
+Epoch [30/50], Step [25/50], Loss: 3307.2983
+Epoch [30/50], Step [50/50], Loss: 10474.1680
+Epoch [31/50], Step [25/50], Loss: 1137.6736
+Epoch [31/50], Step [50/50], Loss: 16003.8252
+Epoch [32/50], Step [25/50], Loss: 1547.8254
+Epoch [32/50], Step [50/50], Loss: 18918.3340
+Epoch [33/50], Step [25/50], Loss: 2248.6890
+Epoch [33/50], Step [50/50], Loss: 3887.0144
+Epoch [34/50], Step [25/50], Loss: 1039.8933
+Epoch [34/50], Step [50/50], Loss: 2064.7102
+Epoch [35/50], Step [25/50], Loss: 723.2966
+Epoch [35/50], Step [50/50], Loss: 20526.4082
+Epoch [36/50], Step [25/50], Loss: 3921.0042
+Epoch [36/50], Step [50/50], Loss: 3267.2722
+Epoch [37/50], Step [25/50], Loss: 1126.4259
+Epoch [37/50], Step [50/50], Loss: 4689.7090
+Epoch [38/50], Step [25/50], Loss: 1222.7876
+Epoch [38/50], Step [50/50], Loss: 12604.4775
+Epoch [39/50], Step [25/50], Loss: 4175.5239
+Epoch [39/50], Step [50/50], Loss: 10500.1377
+Epoch [40/50], Step [25/50], Loss: 1385.7379
+Epoch [40/50], Step [50/50], Loss: 2521.3311
+Epoch [41/50], Step [25/50], Loss: 1402.0057
+Epoch [41/50], Step [50/50], Loss: 3322.6094
+Epoch [42/50], Step [25/50], Loss: 2281.0132
+Epoch [42/50], Step [50/50], Loss: 10144.2217
+Epoch [43/50], Step [25/50], Loss: 1627.2163
+Epoch [43/50], Step [50/50], Loss: 21574.6953
+Epoch [44/50], Step [25/50], Loss: 2717.9321
+Epoch [44/50], Step [50/50], Loss: 21305.4355
+Epoch [45/50], Step [25/50], Loss: 999.5451
+Epoch [45/50], Step [50/50], Loss: 41327.1836
+Epoch [46/50], Step [25/50], Loss: 1261.5520
+Epoch [46/50], Step [50/50], Loss: 1912.9337
+Epoch [47/50], Step [25/50], Loss: 1640.7898
+Epoch [47/50], Step [50/50], Loss: 8453.7080
+Epoch [48/50], Step [25/50], Loss: 1163.3167
+Epoch [48/50], Step [50/50], Loss: 16575.7910
+Epoch [49/50], Step [25/50], Loss: 1554.1681
+Epoch [49/50], Step [50/50], Loss: 11810.0596
+Epoch [50/50], Step [25/50], Loss: 1494.0242
+Epoch [50/50], Step [50/50], Loss: 14873.3096
+rnn/test/60/
+248
+LOADING DATA...
+END LOAD DATA
+Loss: 2965.9851
+Loss: 6373.6763
+Loss: 2136507.7500
+Loss: 26660.7266
+Loss: 900200.8125
+MIN LOSS: 2965.985107421875
+TOTAL LOSS: 900200.8125
+AVG LOSS:614541.7900878906
+CURRNET MODEL seq_len: 4
+CURRENT MODEL: TwoEyesSameLayer
+./rnn/train/60/
+2453
+LOADING DATA...
+END LOAD DATA
+TRAIN...
+Epoch [1/50], Step [25/50], Loss: 108934.8906
+Epoch [1/50], Step [50/50], Loss: 118591.8359
+Epoch [2/50], Step [25/50], Loss: 118962.5234
+Epoch [2/50], Step [50/50], Loss: 125409.2188
+Epoch [3/50], Step [25/50], Loss: 71514.4375
+Epoch [3/50], Step [50/50], Loss: 177592.7031
+Epoch [4/50], Step [25/50], Loss: 70090.1641
+Epoch [4/50], Step [50/50], Loss: 86339.8750
+Epoch [5/50], Step [25/50], Loss: 45479.9648
+Epoch [5/50], Step [50/50], Loss: 82067.1484
+Epoch [6/50], Step [25/50], Loss: 42324.3906
+Epoch [6/50], Step [50/50], Loss: 25133.3359
+Epoch [7/50], Step [25/50], Loss: 26168.7051
+Epoch [7/50], Step [50/50], Loss: 44188.6875
+Epoch [8/50], Step [25/50], Loss: 12991.1680
+Epoch [8/50], Step [50/50], Loss: 28492.3418
+Epoch [9/50], Step [25/50], Loss: 6990.7881
+Epoch [9/50], Step [50/50], Loss: 39204.4531
+Epoch [10/50], Step [25/50], Loss: 9081.1055
+Epoch [10/50], Step [50/50], Loss: 5374.7944
+Epoch [11/50], Step [25/50], Loss: 2409.9333
+Epoch [11/50], Step [50/50], Loss: 6425.7617
+Epoch [12/50], Step [25/50], Loss: 3218.8018
+Epoch [12/50], Step [50/50], Loss: 26720.8516
+Epoch [13/50], Step [25/50], Loss: 2071.5867
+Epoch [13/50], Step [50/50], Loss: 13890.8486
+Epoch [14/50], Step [25/50], Loss: 3822.7812
+Epoch [14/50], Step [50/50], Loss: 3432.2559
+Epoch [15/50], Step [25/50], Loss: 2727.9097
+Epoch [15/50], Step [50/50], Loss: 17485.3145
+Epoch [16/50], Step [25/50], Loss: 2819.8840
+Epoch [16/50], Step [50/50], Loss: 17215.5625
+Epoch [17/50], Step [25/50], Loss: 1622.1711
+Epoch [17/50], Step [50/50], Loss: 4048.9211
+Epoch [18/50], Step [25/50], Loss: 1985.1078
+Epoch [18/50], Step [50/50], Loss: 12079.6670
+Epoch [19/50], Step [25/50], Loss: 2429.3000
+Epoch [19/50], Step [50/50], Loss: 5949.6323
+Epoch [20/50], Step [25/50], Loss: 3639.0271
+Epoch [20/50], Step [50/50], Loss: 35328.7539
+Epoch [21/50], Step [25/50], Loss: 2209.9016
+Epoch [21/50], Step [50/50], Loss: 4010.8269
+Epoch [22/50], Step [25/50], Loss: 1416.6619
+Epoch [22/50], Step [50/50], Loss: 14815.3564
+Epoch [23/50], Step [25/50], Loss: 2465.8704
+Epoch [23/50], Step [50/50], Loss: 10259.3594
+Epoch [24/50], Step [25/50], Loss: 3167.1160
+Epoch [24/50], Step [50/50], Loss: 17270.8457
+Epoch [25/50], Step [25/50], Loss: 1440.4993
+Epoch [25/50], Step [50/50], Loss: 11478.0264
+Epoch [26/50], Step [25/50], Loss: 1312.5225
+Epoch [26/50], Step [50/50], Loss: 22567.8809
+Epoch [27/50], Step [25/50], Loss: 2079.5088
+Epoch [27/50], Step [50/50], Loss: 14625.3701
+Epoch [28/50], Step [25/50], Loss: 2024.2705
+Epoch [28/50], Step [50/50], Loss: 18044.5625
+Epoch [29/50], Step [25/50], Loss: 2712.2959
+Epoch [29/50], Step [50/50], Loss: 13502.5781
+Epoch [30/50], Step [25/50], Loss: 1407.4944
+Epoch [30/50], Step [50/50], Loss: 2823.7939
+Epoch [31/50], Step [25/50], Loss: 3336.9968
+Epoch [31/50], Step [50/50], Loss: 6750.5835
+Epoch [32/50], Step [25/50], Loss: 1436.6229
+Epoch [32/50], Step [50/50], Loss: 7801.4976
+Epoch [33/50], Step [25/50], Loss: 2206.3230
+Epoch [33/50], Step [50/50], Loss: 28314.7598
+Epoch [34/50], Step [25/50], Loss: 1807.7820
+Epoch [34/50], Step [50/50], Loss: 11909.0674
+Epoch [35/50], Step [25/50], Loss: 1164.5387
+Epoch [35/50], Step [50/50], Loss: 8264.1494
+Epoch [36/50], Step [25/50], Loss: 1708.3531
+Epoch [36/50], Step [50/50], Loss: 47568.0312
+Epoch [37/50], Step [25/50], Loss: 1291.5991
+Epoch [37/50], Step [50/50], Loss: 36227.1445
+Epoch [38/50], Step [25/50], Loss: 2174.6326
+Epoch [38/50], Step [50/50], Loss: 4620.5776
+Epoch [39/50], Step [25/50], Loss: 1422.1449
+Epoch [39/50], Step [50/50], Loss: 18002.0586
+Epoch [40/50], Step [25/50], Loss: 1951.1318
+Epoch [40/50], Step [50/50], Loss: 11010.5039
+Epoch [41/50], Step [25/50], Loss: 2216.8945
+Epoch [41/50], Step [50/50], Loss: 14533.6602
+Epoch [42/50], Step [25/50], Loss: 3601.2378
+Epoch [42/50], Step [50/50], Loss: 1546.3429
+Epoch [43/50], Step [25/50], Loss: 793.5737
+Epoch [43/50], Step [50/50], Loss: 32759.6035
+Epoch [44/50], Step [25/50], Loss: 3940.4243
+Epoch [44/50], Step [50/50], Loss: 13483.1914
+Epoch [45/50], Step [25/50], Loss: 1857.1577
+Epoch [45/50], Step [50/50], Loss: 6129.8086
+Epoch [46/50], Step [25/50], Loss: 1335.8536
+Epoch [46/50], Step [50/50], Loss: 4515.3984
+Epoch [47/50], Step [25/50], Loss: 1113.8320
+Epoch [47/50], Step [50/50], Loss: 10011.9102
+Epoch [48/50], Step [25/50], Loss: 1773.6327
+Epoch [48/50], Step [50/50], Loss: 11686.6719
+Epoch [49/50], Step [25/50], Loss: 2070.9880
+Epoch [49/50], Step [50/50], Loss: 25451.7637
+Epoch [50/50], Step [25/50], Loss: 2456.7722
+Epoch [50/50], Step [50/50], Loss: 5472.1953
+rnn/test/60/
+248
+LOADING DATA...
+END LOAD DATA
+Loss: 51362.8984
+Loss: 18510.9473
+Loss: 14905.6748
+Loss: 28518.4434
+Loss: 15637.7695
+MIN LOSS: 14905.6748046875
+TOTAL LOSS: 15637.76953125
+AVG LOSS:25787.1466796875
+CURRNET MODEL seq_len: 6
+CURRENT MODEL: TwoEyes
+./rnn/train/60/
+2453
+LOADING DATA...
+END LOAD DATA
+TRAIN...
+Epoch [1/50], Step [25/50], Loss: 138315.8438
+Epoch [1/50], Step [50/50], Loss: 91451.3203
+Epoch [2/50], Step [25/50], Loss: 110429.4609
+Epoch [2/50], Step [50/50], Loss: 138453.3906
+Epoch [3/50], Step [25/50], Loss: 82528.4062
+Epoch [3/50], Step [50/50], Loss: 85614.5312
+Epoch [4/50], Step [25/50], Loss: 74783.7422
+Epoch [4/50], Step [50/50], Loss: 93025.0703
+Epoch [5/50], Step [25/50], Loss: 61471.8789
+Epoch [5/50], Step [50/50], Loss: 16495.1309
+Epoch [6/50], Step [25/50], Loss: 40835.9570
+Epoch [6/50], Step [50/50], Loss: 67404.9922
+Epoch [7/50], Step [25/50], Loss: 24668.6016
+Epoch [7/50], Step [50/50], Loss: 15836.9424
+Epoch [8/50], Step [25/50], Loss: 21898.1758
+Epoch [8/50], Step [50/50], Loss: 30419.8281
+Epoch [9/50], Step [25/50], Loss: 8154.9883
+Epoch [9/50], Step [50/50], Loss: 24208.8848
+Epoch [10/50], Step [25/50], Loss: 7570.2925
+Epoch [10/50], Step [50/50], Loss: 13401.7891
+Epoch [11/50], Step [25/50], Loss: 3863.7957
+Epoch [11/50], Step [50/50], Loss: 29894.4844
+Epoch [12/50], Step [25/50], Loss: 3551.3479
+Epoch [12/50], Step [50/50], Loss: 7315.2656
+Epoch [13/50], Step [25/50], Loss: 2993.3013
+Epoch [13/50], Step [50/50], Loss: 12837.5547
+Epoch [14/50], Step [25/50], Loss: 2002.7489
+Epoch [14/50], Step [50/50], Loss: 17160.8301
+Epoch [15/50], Step [25/50], Loss: 2528.1340
+Epoch [15/50], Step [50/50], Loss: 35659.8867
+Epoch [16/50], Step [25/50], Loss: 2341.4666
+Epoch [16/50], Step [50/50], Loss: 11010.0781
+Epoch [17/50], Step [25/50], Loss: 1933.3097
+Epoch [17/50], Step [50/50], Loss: 51373.5586
+Epoch [18/50], Step [25/50], Loss: 2946.5422
+Epoch [18/50], Step [50/50], Loss: 8676.0020
+Epoch [19/50], Step [25/50], Loss: 3182.4155
+Epoch [19/50], Step [50/50], Loss: 7985.6016
+Epoch [20/50], Step [25/50], Loss: 1545.3999
+Epoch [20/50], Step [50/50], Loss: 42089.7461
+Epoch [21/50], Step [25/50], Loss: 2842.7991
+Epoch [21/50], Step [50/50], Loss: 14162.9023
+Epoch [22/50], Step [25/50], Loss: 1696.5864
+Epoch [22/50], Step [50/50], Loss: 15958.3936
+Epoch [23/50], Step [25/50], Loss: 2033.4564
+Epoch [23/50], Step [50/50], Loss: 27366.7441
+Epoch [24/50], Step [25/50], Loss: 1811.7087
+Epoch [24/50], Step [50/50], Loss: 61677.0000
+Epoch [25/50], Step [25/50], Loss: 1794.2065
+Epoch [25/50], Step [50/50], Loss: 4666.4106
+Epoch [26/50], Step [25/50], Loss: 1798.7239
+Epoch [26/50], Step [50/50], Loss: 13215.4756
+Epoch [27/50], Step [25/50], Loss: 2730.9612
+Epoch [27/50], Step [50/50], Loss: 10203.3945
+Epoch [28/50], Step [25/50], Loss: 3199.6326
+Epoch [28/50], Step [50/50], Loss: 3480.5857
+Epoch [29/50], Step [25/50], Loss: 1673.8392
+Epoch [29/50], Step [50/50], Loss: 6570.5898
+Epoch [30/50], Step [25/50], Loss: 2596.9131
+Epoch [30/50], Step [50/50], Loss: 3160.6387
+Epoch [31/50], Step [25/50], Loss: 1350.0520
+Epoch [31/50], Step [50/50], Loss: 20753.0430
+Epoch [32/50], Step [25/50], Loss: 1454.4409
+Epoch [32/50], Step [50/50], Loss: 55362.4688
+Epoch [33/50], Step [25/50], Loss: 1160.7615
+Epoch [33/50], Step [50/50], Loss: 22224.6094
+Epoch [34/50], Step [25/50], Loss: 1247.1893
+Epoch [34/50], Step [50/50], Loss: 40806.4375
+Epoch [35/50], Step [25/50], Loss: 1586.9553
+Epoch [35/50], Step [50/50], Loss: 7632.4492
+Epoch [36/50], Step [25/50], Loss: 1432.8556
+Epoch [36/50], Step [50/50], Loss: 9341.8369
+Epoch [37/50], Step [25/50], Loss: 2278.2327
+Epoch [37/50], Step [50/50], Loss: 3277.2471
+Epoch [38/50], Step [25/50], Loss: 1916.3298
+Epoch [38/50], Step [50/50], Loss: 3381.9465
+Epoch [39/50], Step [25/50], Loss: 1427.7861
+Epoch [39/50], Step [50/50], Loss: 21752.0215
+Epoch [40/50], Step [25/50], Loss: 1529.5847
+Epoch [40/50], Step [50/50], Loss: 6426.0620
+Epoch [41/50], Step [25/50], Loss: 2587.3015
+Epoch [41/50], Step [50/50], Loss: 15162.8955
+Epoch [42/50], Step [25/50], Loss: 1221.0649
+Epoch [42/50], Step [50/50], Loss: 33230.1016
+Epoch [43/50], Step [25/50], Loss: 1336.1412
+Epoch [43/50], Step [50/50], Loss: 38080.4062
+Epoch [44/50], Step [25/50], Loss: 2860.0427
+Epoch [44/50], Step [50/50], Loss: 5253.5806
+Epoch [45/50], Step [25/50], Loss: 3799.4229
+Epoch [45/50], Step [50/50], Loss: 8847.5264
+Epoch [46/50], Step [25/50], Loss: 1831.1053
+Epoch [46/50], Step [50/50], Loss: 8030.4570
+Epoch [47/50], Step [25/50], Loss: 1941.5475
+Epoch [47/50], Step [50/50], Loss: 27664.2441
+Epoch [48/50], Step [25/50], Loss: 3424.7568
+Epoch [48/50], Step [50/50], Loss: 4894.6514
+Epoch [49/50], Step [25/50], Loss: 2922.5479
+Epoch [49/50], Step [50/50], Loss: 9112.3350
+Epoch [50/50], Step [25/50], Loss: 1903.1067
+Epoch [50/50], Step [50/50], Loss: 34092.7148
+rnn/test/60/
+248
+LOADING DATA...
+END LOAD DATA
+Loss: 11662.3623
+Loss: 1583.9045
+Loss: 2807.7910
+Loss: 1809.0587
+Loss: 96583.6484
+MIN LOSS: 1583.904541015625
+TOTAL LOSS: 96583.6484375
+AVG LOSS:22889.35300292969
+CURRNET MODEL seq_len: 6
+CURRENT MODEL: TwoEyesSameLayer
+./rnn/train/60/
+2453
+LOADING DATA...
+END LOAD DATA
+TRAIN...
+Epoch [1/50], Step [25/50], Loss: 105994.0625
+Epoch [1/50], Step [50/50], Loss: 174966.4844
+Epoch [2/50], Step [25/50], Loss: 109005.9688
+Epoch [2/50], Step [50/50], Loss: 129434.1016
+Epoch [3/50], Step [25/50], Loss: 91772.6406
+Epoch [3/50], Step [50/50], Loss: 172608.4844
+Epoch [4/50], Step [25/50], Loss: 71307.2969
+Epoch [4/50], Step [50/50], Loss: 74717.4141
+Epoch [5/50], Step [25/50], Loss: 51505.7188
+Epoch [5/50], Step [50/50], Loss: 41588.3281
+Epoch [6/50], Step [25/50], Loss: 34270.1133
+Epoch [6/50], Step [50/50], Loss: 89381.3047
+Epoch [7/50], Step [25/50], Loss: 26203.3496
+Epoch [7/50], Step [50/50], Loss: 35849.6250
+Epoch [8/50], Step [25/50], Loss: 21890.6328
+Epoch [8/50], Step [50/50], Loss: 4962.4653
+Epoch [9/50], Step [25/50], Loss: 11977.3271
+Epoch [9/50], Step [50/50], Loss: 14412.9502
+Epoch [10/50], Step [25/50], Loss: 5207.4185
+Epoch [10/50], Step [50/50], Loss: 18988.7715
+Epoch [11/50], Step [25/50], Loss: 4900.1084
+Epoch [11/50], Step [50/50], Loss: 14267.5928
+Epoch [12/50], Step [25/50], Loss: 4914.2344
+Epoch [12/50], Step [50/50], Loss: 19390.5664
+Epoch [13/50], Step [25/50], Loss: 3318.3684
+Epoch [13/50], Step [50/50], Loss: 43678.7461
+Epoch [14/50], Step [25/50], Loss: 2674.4084
+Epoch [14/50], Step [50/50], Loss: 32846.2305
+Epoch [15/50], Step [25/50], Loss: 2327.6013
+Epoch [15/50], Step [50/50], Loss: 27481.4980
+Epoch [16/50], Step [25/50], Loss: 1819.7010
+Epoch [16/50], Step [50/50], Loss: 12876.4854
+Epoch [17/50], Step [25/50], Loss: 2316.0691
+Epoch [17/50], Step [50/50], Loss: 18611.9902
+Epoch [18/50], Step [25/50], Loss: 2582.9778
+Epoch [18/50], Step [50/50], Loss: 20821.3066
+Epoch [19/50], Step [25/50], Loss: 2393.8491
+Epoch [19/50], Step [50/50], Loss: 9738.9912
+Epoch [20/50], Step [25/50], Loss: 4583.5220
+Epoch [20/50], Step [50/50], Loss: 41090.5234
+Epoch [21/50], Step [25/50], Loss: 3771.2139
+Epoch [21/50], Step [50/50], Loss: 69897.7109
+Epoch [22/50], Step [25/50], Loss: 6887.5742
+Epoch [22/50], Step [50/50], Loss: 41664.5703
+Epoch [23/50], Step [25/50], Loss: 2994.8926
+Epoch [23/50], Step [50/50], Loss: 12263.2568
+Epoch [24/50], Step [25/50], Loss: 2177.3867
+Epoch [24/50], Step [50/50], Loss: 14145.0029
+Epoch [25/50], Step [25/50], Loss: 3304.0210
+Epoch [25/50], Step [50/50], Loss: 14660.0234
+Epoch [26/50], Step [25/50], Loss: 4194.3086
+Epoch [26/50], Step [50/50], Loss: 23477.0254
+Epoch [27/50], Step [25/50], Loss: 1594.5507
+Epoch [27/50], Step [50/50], Loss: 20954.3496
+Epoch [28/50], Step [25/50], Loss: 3343.1016
+Epoch [28/50], Step [50/50], Loss: 13237.9180
+Epoch [29/50], Step [25/50], Loss: 2453.6824
+Epoch [29/50], Step [50/50], Loss: 13153.7451
+Epoch [30/50], Step [25/50], Loss: 2070.8320
+Epoch [30/50], Step [50/50], Loss: 8949.2656
+Epoch [31/50], Step [25/50], Loss: 1187.4873
+Epoch [31/50], Step [50/50], Loss: 1326.7832
+Epoch [32/50], Step [25/50], Loss: 2025.5641
+Epoch [32/50], Step [50/50], Loss: 19811.2480
+Epoch [33/50], Step [25/50], Loss: 1448.1948
+Epoch [33/50], Step [50/50], Loss: 30764.9922
+Epoch [34/50], Step [25/50], Loss: 2410.8591
+Epoch [34/50], Step [50/50], Loss: 36290.5781
+Epoch [35/50], Step [25/50], Loss: 2118.3987
+Epoch [35/50], Step [50/50], Loss: 3768.1868
+Epoch [36/50], Step [25/50], Loss: 1457.6335
+Epoch [36/50], Step [50/50], Loss: 7220.9780
+Epoch [37/50], Step [25/50], Loss: 1483.4336
+Epoch [37/50], Step [50/50], Loss: 5200.0337
+Epoch [38/50], Step [25/50], Loss: 3637.1157
+Epoch [38/50], Step [50/50], Loss: 6235.3008
+Epoch [39/50], Step [25/50], Loss: 1492.5680
+Epoch [39/50], Step [50/50], Loss: 25828.6484
+Epoch [40/50], Step [25/50], Loss: 1113.3964
+Epoch [40/50], Step [50/50], Loss: 22493.8379
+Epoch [41/50], Step [25/50], Loss: 1302.5706
+Epoch [41/50], Step [50/50], Loss: 21103.1270
+Epoch [42/50], Step [25/50], Loss: 1285.4204
+Epoch [42/50], Step [50/50], Loss: 6741.8647
+Epoch [43/50], Step [25/50], Loss: 1271.5565
+Epoch [43/50], Step [50/50], Loss: 21800.8496
+Epoch [44/50], Step [25/50], Loss: 2400.8323
+Epoch [44/50], Step [50/50], Loss: 8417.7451
+Epoch [45/50], Step [25/50], Loss: 1938.5938
+Epoch [45/50], Step [50/50], Loss: 25865.1328
+Epoch [46/50], Step [25/50], Loss: 2803.6475
+Epoch [46/50], Step [50/50], Loss: 34385.4102
+Epoch [47/50], Step [25/50], Loss: 1614.9269
+Epoch [47/50], Step [50/50], Loss: 52119.4648
+Epoch [48/50], Step [25/50], Loss: 2197.0024
+Epoch [48/50], Step [50/50], Loss: 2018.8124
+Epoch [49/50], Step [25/50], Loss: 1502.0759
+Epoch [49/50], Step [50/50], Loss: 16541.6758
+Epoch [50/50], Step [25/50], Loss: 964.2305
+Epoch [50/50], Step [50/50], Loss: 20150.4512
+rnn/test/60/
+248
+LOADING DATA...
+END LOAD DATA
+Loss: 13882230.0000
+Loss: 133230.4375
+Loss: 41907.0586
+Loss: 310747.9062
+Loss: 7164907.5000
+MIN LOSS: 41907.05859375
+TOTAL LOSS: 7164907.5
+AVG LOSS:4306604.58046875
+CURRNET MODEL seq_len: 8
+CURRENT MODEL: TwoEyes
+./rnn/train/60/
+2453
+LOADING DATA...
+END LOAD DATA
+TRAIN...
+Epoch [1/50], Step [25/50], Loss: 114483.4219
+Epoch [1/50], Step [50/50], Loss: 117154.0625
+Epoch [2/50], Step [25/50], Loss: 108333.4922
+Epoch [2/50], Step [50/50], Loss: 47693.9883
+Epoch [3/50], Step [25/50], Loss: 96270.3516
+Epoch [3/50], Step [50/50], Loss: 42180.1133
+Epoch [4/50], Step [25/50], Loss: 80960.3516
+Epoch [4/50], Step [50/50], Loss: 31635.7969
+Epoch [5/50], Step [25/50], Loss: 71248.9375
+Epoch [5/50], Step [50/50], Loss: 83124.6953
+Epoch [6/50], Step [25/50], Loss: 33285.4141
+Epoch [6/50], Step [50/50], Loss: 46814.0586
+Epoch [7/50], Step [25/50], Loss: 37293.3867
+Epoch [7/50], Step [50/50], Loss: 54916.0898
+Epoch [8/50], Step [25/50], Loss: 9950.3311
+Epoch [8/50], Step [50/50], Loss: 15440.1377
+Epoch [9/50], Step [25/50], Loss: 16304.8564
+Epoch [9/50], Step [50/50], Loss: 15317.9102
+Epoch [10/50], Step [25/50], Loss: 4419.7847
+Epoch [10/50], Step [50/50], Loss: 31208.6250
+Epoch [11/50], Step [25/50], Loss: 1925.7195
+Epoch [11/50], Step [50/50], Loss: 9975.1240
+Epoch [12/50], Step [25/50], Loss: 2862.4226
+Epoch [12/50], Step [50/50], Loss: 3831.9626
+Epoch [13/50], Step [25/50], Loss: 3575.8240
+Epoch [13/50], Step [50/50], Loss: 37814.7852
+Epoch [14/50], Step [25/50], Loss: 2990.1375
+Epoch [14/50], Step [50/50], Loss: 5068.2207
+Epoch [15/50], Step [25/50], Loss: 2812.4556
+Epoch [15/50], Step [50/50], Loss: 19272.5000
+Epoch [16/50], Step [25/50], Loss: 3546.9954
+Epoch [16/50], Step [50/50], Loss: 20226.3750
+Epoch [17/50], Step [25/50], Loss: 4821.5552
+Epoch [17/50], Step [50/50], Loss: 6563.8477
+Epoch [18/50], Step [25/50], Loss: 1463.8712
+Epoch [18/50], Step [50/50], Loss: 20897.6855
+Epoch [19/50], Step [25/50], Loss: 4414.5015
+Epoch [19/50], Step [50/50], Loss: 16348.1670
+Epoch [20/50], Step [25/50], Loss: 2723.9609
+Epoch [20/50], Step [50/50], Loss: 47242.8086
+Epoch [21/50], Step [25/50], Loss: 2683.7568
+Epoch [21/50], Step [50/50], Loss: 41258.8555
+Epoch [22/50], Step [25/50], Loss: 2028.6630
+Epoch [22/50], Step [50/50], Loss: 34045.6250
+Epoch [23/50], Step [25/50], Loss: 1895.0210
+Epoch [23/50], Step [50/50], Loss: 39247.8320
+Epoch [24/50], Step [25/50], Loss: 5001.4419
+Epoch [24/50], Step [50/50], Loss: 11552.4229
+Epoch [25/50], Step [25/50], Loss: 2744.1340
+Epoch [25/50], Step [50/50], Loss: 10281.3154
+Epoch [26/50], Step [25/50], Loss: 1880.4471
+Epoch [26/50], Step [50/50], Loss: 13742.8789
+Epoch [27/50], Step [25/50], Loss: 1630.5675
+Epoch [27/50], Step [50/50], Loss: 21747.1465
+Epoch [28/50], Step [25/50], Loss: 3630.4304
+Epoch [28/50], Step [50/50], Loss: 18373.5781
+Epoch [29/50], Step [25/50], Loss: 2050.6895
+Epoch [29/50], Step [50/50], Loss: 68016.6328
+Epoch [30/50], Step [25/50], Loss: 2865.1995
+Epoch [30/50], Step [50/50], Loss: 13382.4717
+Epoch [31/50], Step [25/50], Loss: 1890.0436
+Epoch [31/50], Step [50/50], Loss: 19895.7520
+Epoch [32/50], Step [25/50], Loss: 1731.3185
+Epoch [32/50], Step [50/50], Loss: 23118.9766
+Epoch [33/50], Step [25/50], Loss: 2931.5859
+Epoch [33/50], Step [50/50], Loss: 3678.7373
+Epoch [34/50], Step [25/50], Loss: 3819.0166
+Epoch [34/50], Step [50/50], Loss: 7505.2075
+Epoch [35/50], Step [25/50], Loss: 1998.3962
+Epoch [35/50], Step [50/50], Loss: 16369.0938
+Epoch [36/50], Step [25/50], Loss: 1613.9148
+Epoch [36/50], Step [50/50], Loss: 11008.9287
+Epoch [37/50], Step [25/50], Loss: 2041.2014
+Epoch [37/50], Step [50/50], Loss: 4989.5591
+Epoch [38/50], Step [25/50], Loss: 1847.4481
+Epoch [38/50], Step [50/50], Loss: 8805.6533
+Epoch [39/50], Step [25/50], Loss: 2362.3162
+Epoch [39/50], Step [50/50], Loss: 25705.6152
+Epoch [40/50], Step [25/50], Loss: 2530.0454
+Epoch [40/50], Step [50/50], Loss: 15326.0771
+Epoch [41/50], Step [25/50], Loss: 3123.3562
+Epoch [41/50], Step [50/50], Loss: 17334.8027
+Epoch [42/50], Step [25/50], Loss: 1164.4043
+Epoch [42/50], Step [50/50], Loss: 37849.4609
+Epoch [43/50], Step [25/50], Loss: 2764.5588
+Epoch [43/50], Step [50/50], Loss: 5000.1919
+Epoch [44/50], Step [25/50], Loss: 1430.7653
+Epoch [44/50], Step [50/50], Loss: 39520.7539
+Epoch [45/50], Step [25/50], Loss: 2485.3533
+Epoch [45/50], Step [50/50], Loss: 2582.2864
+Epoch [46/50], Step [25/50], Loss: 3883.8076
+Epoch [46/50], Step [50/50], Loss: 5802.0835
+Epoch [47/50], Step [25/50], Loss: 2024.2269
+Epoch [47/50], Step [50/50], Loss: 20076.5566
+Epoch [48/50], Step [25/50], Loss: 2502.3164
+Epoch [48/50], Step [50/50], Loss: 1592.0010
+Epoch [49/50], Step [25/50], Loss: 1099.2748
+Epoch [49/50], Step [50/50], Loss: 7446.1050
+Epoch [50/50], Step [25/50], Loss: 1246.6633
+Epoch [50/50], Step [50/50], Loss: 37919.5352
+rnn/test/60/
+248
+LOADING DATA...
+END LOAD DATA
+Loss: 1579.2965
+Loss: 510358.8750
+Loss: 1362.8196
+Loss: 1795.5261
+Loss: 519012.2188
+MIN LOSS: 1362.819580078125
+TOTAL LOSS: 519012.21875
+AVG LOSS:206821.7471923828
+CURRNET MODEL seq_len: 8
+CURRENT MODEL: TwoEyesSameLayer
+./rnn/train/60/
+2453
+LOADING DATA...
+END LOAD DATA
+TRAIN...
+Epoch [1/50], Step [25/50], Loss: 128472.8828
+Epoch [1/50], Step [50/50], Loss: 105369.8359
+Epoch [2/50], Step [25/50], Loss: 105210.7031
+Epoch [2/50], Step [50/50], Loss: 116018.5859
+Epoch [3/50], Step [25/50], Loss: 92772.0703
+Epoch [3/50], Step [50/50], Loss: 58098.2188
+Epoch [4/50], Step [25/50], Loss: 67736.4922
+Epoch [4/50], Step [50/50], Loss: 37697.6445
+Epoch [5/50], Step [25/50], Loss: 51273.8164
+Epoch [5/50], Step [50/50], Loss: 51152.9375
+Epoch [6/50], Step [25/50], Loss: 37004.1523
+Epoch [6/50], Step [50/50], Loss: 86786.1562
+Epoch [7/50], Step [25/50], Loss: 30835.9609
+Epoch [7/50], Step [50/50], Loss: 8893.0205
+Epoch [8/50], Step [25/50], Loss: 14687.6699
+Epoch [8/50], Step [50/50], Loss: 35449.1055
+Epoch [9/50], Step [25/50], Loss: 9816.5234
+Epoch [9/50], Step [50/50], Loss: 13773.3906
+Epoch [10/50], Step [25/50], Loss: 6340.9624
+Epoch [10/50], Step [50/50], Loss: 38538.3086
+Epoch [11/50], Step [25/50], Loss: 2571.2002
+Epoch [11/50], Step [50/50], Loss: 26003.7285
+Epoch [12/50], Step [25/50], Loss: 1846.9304
+Epoch [12/50], Step [50/50], Loss: 54667.6562
+Epoch [13/50], Step [25/50], Loss: 2357.7825
+Epoch [13/50], Step [50/50], Loss: 4709.7910
+Epoch [14/50], Step [25/50], Loss: 4038.0696
+Epoch [14/50], Step [50/50], Loss: 16609.5723
+Epoch [15/50], Step [25/50], Loss: 1412.4290
+Epoch [15/50], Step [50/50], Loss: 5958.2173
+Epoch [16/50], Step [25/50], Loss: 1433.8647
+Epoch [16/50], Step [50/50], Loss: 9995.0430
+Epoch [17/50], Step [25/50], Loss: 3047.0200
+Epoch [17/50], Step [50/50], Loss: 8816.8691
+Epoch [18/50], Step [25/50], Loss: 2318.2859
+Epoch [18/50], Step [50/50], Loss: 4967.2817
+Epoch [19/50], Step [25/50], Loss: 1261.6293
+Epoch [19/50], Step [50/50], Loss: 11272.4844
+Epoch [20/50], Step [25/50], Loss: 4992.5039
+Epoch [20/50], Step [50/50], Loss: 22004.9980
+Epoch [21/50], Step [25/50], Loss: 2293.8069
+Epoch [21/50], Step [50/50], Loss: 11415.2451
+Epoch [22/50], Step [25/50], Loss: 1545.0509
+Epoch [22/50], Step [50/50], Loss: 3263.4026
+Epoch [23/50], Step [25/50], Loss: 956.4158
+Epoch [23/50], Step [50/50], Loss: 8082.0195
+Epoch [24/50], Step [25/50], Loss: 1849.7539
+Epoch [24/50], Step [50/50], Loss: 16276.2881
+Epoch [25/50], Step [25/50], Loss: 3791.7800
+Epoch [25/50], Step [50/50], Loss: 26416.4941
+Epoch [26/50], Step [25/50], Loss: 1599.0514
+Epoch [26/50], Step [50/50], Loss: 4953.1392
+Epoch [27/50], Step [25/50], Loss: 1538.5464
+Epoch [27/50], Step [50/50], Loss: 22343.2402
+Epoch [28/50], Step [25/50], Loss: 1788.6594
+Epoch [28/50], Step [50/50], Loss: 4254.7251
+Epoch [29/50], Step [25/50], Loss: 1018.8954
+Epoch [29/50], Step [50/50], Loss: 57779.3438
+Epoch [30/50], Step [25/50], Loss: 1898.3383
+Epoch [30/50], Step [50/50], Loss: 1858.3340
+Epoch [31/50], Step [25/50], Loss: 1729.1416
+Epoch [31/50], Step [50/50], Loss: 35403.9102
+Epoch [32/50], Step [25/50], Loss: 3637.7263
+Epoch [32/50], Step [50/50], Loss: 8517.8672
+Epoch [33/50], Step [25/50], Loss: 1513.0043
+Epoch [33/50], Step [50/50], Loss: 38711.0000
+Epoch [34/50], Step [25/50], Loss: 3496.6873
+Epoch [34/50], Step [50/50], Loss: 10730.5068
+Epoch [35/50], Step [25/50], Loss: 2735.8562
+Epoch [35/50], Step [50/50], Loss: 12750.1494
+Epoch [36/50], Step [25/50], Loss: 1300.5460
+Epoch [36/50], Step [50/50], Loss: 26876.7734
+Epoch [37/50], Step [25/50], Loss: 864.0078
+Epoch [37/50], Step [50/50], Loss: 7855.7056
+Epoch [38/50], Step [25/50], Loss: 2011.4928
+Epoch [38/50], Step [50/50], Loss: 4615.9253
+Epoch [39/50], Step [25/50], Loss: 2062.9011
+Epoch [39/50], Step [50/50], Loss: 8464.5732
+Epoch [40/50], Step [25/50], Loss: 1076.0148
+Epoch [40/50], Step [50/50], Loss: 26934.1348
+Epoch [41/50], Step [25/50], Loss: 3660.1201
+Epoch [41/50], Step [50/50], Loss: 4018.1516
+Epoch [42/50], Step [25/50], Loss: 1540.7925
+Epoch [42/50], Step [50/50], Loss: 6694.6895
+Epoch [43/50], Step [25/50], Loss: 1208.4351
+Epoch [43/50], Step [50/50], Loss: 16564.3379
+Epoch [44/50], Step [25/50], Loss: 1672.4393
+Epoch [44/50], Step [50/50], Loss: 31543.0488
+Epoch [45/50], Step [25/50], Loss: 847.0890
+Epoch [45/50], Step [50/50], Loss: 36723.3711
+Epoch [46/50], Step [25/50], Loss: 2972.4778
+Epoch [46/50], Step [50/50], Loss: 21130.0664
+Epoch [47/50], Step [25/50], Loss: 3564.3350
+Epoch [47/50], Step [50/50], Loss: 23378.9316
+Epoch [48/50], Step [25/50], Loss: 3637.7029
+Epoch [48/50], Step [50/50], Loss: 36188.4688
+Epoch [49/50], Step [25/50], Loss: 1759.6083
+Epoch [49/50], Step [50/50], Loss: 6261.6230
+Epoch [50/50], Step [25/50], Loss: 788.6266
+Epoch [50/50], Step [50/50], Loss: 5416.8555
+rnn/test/60/
+248
+LOADING DATA...
+END LOAD DATA
+Loss: 172625184.0000
+Loss: 505163.0938
+Loss: 44342.8164
+Loss: 89041.1406
+Loss: 87821.3047
+MIN LOSS: 44342.81640625
+TOTAL LOSS: 87821.3046875
+AVG LOSS:34670310.47109375
+CURRNET MODEL seq_len: 10
+CURRENT MODEL: TwoEyes
+./rnn/train/60/
+2453
+LOADING DATA...
+END LOAD DATA
+TRAIN...
+Epoch [1/50], Step [25/50], Loss: 110050.2812
+Epoch [1/50], Step [50/50], Loss: 201818.6250
+Epoch [2/50], Step [25/50], Loss: 107569.9922
+Epoch [2/50], Step [50/50], Loss: 119355.4766
+Epoch [3/50], Step [25/50], Loss: 105395.7812
+Epoch [3/50], Step [50/50], Loss: 195657.8594
+Epoch [4/50], Step [25/50], Loss: 56632.1953
+Epoch [4/50], Step [50/50], Loss: 126545.4062
+Epoch [5/50], Step [25/50], Loss: 76818.1562
+Epoch [5/50], Step [50/50], Loss: 67103.9844
+Epoch [6/50], Step [25/50], Loss: 39815.7266
+Epoch [6/50], Step [50/50], Loss: 41884.2539
+Epoch [7/50], Step [25/50], Loss: 28387.0156
+Epoch [7/50], Step [50/50], Loss: 13707.7891
+Epoch [8/50], Step [25/50], Loss: 12550.8320
+Epoch [8/50], Step [50/50], Loss: 9332.2803
+Epoch [9/50], Step [25/50], Loss: 8627.9268
+Epoch [9/50], Step [50/50], Loss: 32762.7090
+Epoch [10/50], Step [25/50], Loss: 5311.4258
+Epoch [10/50], Step [50/50], Loss: 33126.1523
+Epoch [11/50], Step [25/50], Loss: 2664.3247
+Epoch [11/50], Step [50/50], Loss: 13795.8203
+Epoch [12/50], Step [25/50], Loss: 1993.9888
+Epoch [12/50], Step [50/50], Loss: 6543.0063
+Epoch [13/50], Step [25/50], Loss: 2206.4368
+Epoch [13/50], Step [50/50], Loss: 10654.5010
+Epoch [14/50], Step [25/50], Loss: 6138.0000
+Epoch [14/50], Step [50/50], Loss: 14559.0850
+Epoch [15/50], Step [25/50], Loss: 2234.2258
+Epoch [15/50], Step [50/50], Loss: 36996.0820
+Epoch [16/50], Step [25/50], Loss: 2432.4702
+Epoch [16/50], Step [50/50], Loss: 21950.7109
+Epoch [17/50], Step [25/50], Loss: 2464.4343
+Epoch [17/50], Step [50/50], Loss: 16368.1299
+Epoch [18/50], Step [25/50], Loss: 1526.0552
+Epoch [18/50], Step [50/50], Loss: 11154.7734
+Epoch [19/50], Step [25/50], Loss: 1808.3280
+Epoch [19/50], Step [50/50], Loss: 33316.7539
+Epoch [20/50], Step [25/50], Loss: 1733.0950
+Epoch [20/50], Step [50/50], Loss: 23420.2324
+Epoch [21/50], Step [25/50], Loss: 1789.8347
+Epoch [21/50], Step [50/50], Loss: 4796.1484
+Epoch [22/50], Step [25/50], Loss: 1411.8344
+Epoch [22/50], Step [50/50], Loss: 1138.6912
+Epoch [23/50], Step [25/50], Loss: 2441.5037
+Epoch [23/50], Step [50/50], Loss: 12605.8359
+Epoch [24/50], Step [25/50], Loss: 2815.3459
+Epoch [24/50], Step [50/50], Loss: 8524.6172
+Epoch [25/50], Step [25/50], Loss: 1614.1603
+Epoch [25/50], Step [50/50], Loss: 6335.7485
+Epoch [26/50], Step [25/50], Loss: 1159.8517
+Epoch [26/50], Step [50/50], Loss: 29456.3203
+Epoch [27/50], Step [25/50], Loss: 3301.2080
+Epoch [27/50], Step [50/50], Loss: 12050.9170
+Epoch [28/50], Step [25/50], Loss: 2041.0880
+Epoch [28/50], Step [50/50], Loss: 4212.2646
+Epoch [29/50], Step [25/50], Loss: 2379.5217
+Epoch [29/50], Step [50/50], Loss: 5326.6304
+Epoch [30/50], Step [25/50], Loss: 1562.4354
+Epoch [30/50], Step [50/50], Loss: 7123.5059
+Epoch [31/50], Step [25/50], Loss: 4324.7593
+Epoch [31/50], Step [50/50], Loss: 6952.1934
+Epoch [32/50], Step [25/50], Loss: 951.5978
+Epoch [32/50], Step [50/50], Loss: 8035.9673
+Epoch [33/50], Step [25/50], Loss: 605.1340
+Epoch [33/50], Step [50/50], Loss: 12135.1982
+Epoch [34/50], Step [25/50], Loss: 948.1486
+Epoch [34/50], Step [50/50], Loss: 8254.5752
+Epoch [35/50], Step [25/50], Loss: 1981.5331
+Epoch [35/50], Step [50/50], Loss: 21367.4160
+Epoch [36/50], Step [25/50], Loss: 1862.8297
+Epoch [36/50], Step [50/50], Loss: 10626.6221
+Epoch [37/50], Step [25/50], Loss: 2731.4048
+Epoch [37/50], Step [50/50], Loss: 2292.2175
+Epoch [38/50], Step [25/50], Loss: 1394.4098
+Epoch [38/50], Step [50/50], Loss: 3116.8020
+Epoch [39/50], Step [25/50], Loss: 2055.2441
+Epoch [39/50], Step [50/50], Loss: 4992.1538
+Epoch [40/50], Step [25/50], Loss: 2497.5874
+Epoch [40/50], Step [50/50], Loss: 4573.1943
+Epoch [41/50], Step [25/50], Loss: 2458.0693
+Epoch [41/50], Step [50/50], Loss: 30001.0312
+Epoch [42/50], Step [25/50], Loss: 4278.4492
+Epoch [42/50], Step [50/50], Loss: 20857.0449
+Epoch [43/50], Step [25/50], Loss: 1760.3018
+Epoch [43/50], Step [50/50], Loss: 30484.2871
+Epoch [44/50], Step [25/50], Loss: 4437.6753
+Epoch [44/50], Step [50/50], Loss: 23059.8984
+Epoch [45/50], Step [25/50], Loss: 2093.1455
+Epoch [45/50], Step [50/50], Loss: 10153.6025
+Epoch [46/50], Step [25/50], Loss: 1388.3285
+Epoch [46/50], Step [50/50], Loss: 15336.6982
+Epoch [47/50], Step [25/50], Loss: 1582.7393
+Epoch [47/50], Step [50/50], Loss: 8006.2871
+Epoch [48/50], Step [25/50], Loss: 1491.8058
+Epoch [48/50], Step [50/50], Loss: 30640.0449
+Epoch [49/50], Step [25/50], Loss: 2025.6642
+Epoch [49/50], Step [50/50], Loss: 66882.5938
+Epoch [50/50], Step [25/50], Loss: 2036.5066
+Epoch [50/50], Step [50/50], Loss: 34534.4492
+rnn/test/60/
+248
+LOADING DATA...
+END LOAD DATA
+Loss: 2984.4397
+Loss: 7444.4180
+Loss: 9615.9277
+Loss: 2658.3665
+Loss: 99161.7422
+MIN LOSS: 2658.366455078125
+TOTAL LOSS: 99161.7421875
+AVG LOSS:24372.97880859375
+CURRNET MODEL seq_len: 10
+CURRENT MODEL: TwoEyesSameLayer
+./rnn/train/60/
+2453
+LOADING DATA...
+END LOAD DATA
+TRAIN...
+Epoch [1/50], Step [25/50], Loss: 114925.5469
+Epoch [1/50], Step [50/50], Loss: 138626.5781
+Epoch [2/50], Step [25/50], Loss: 107845.6328
+Epoch [2/50], Step [50/50], Loss: 69452.5938
+Epoch [3/50], Step [25/50], Loss: 87603.6094
+Epoch [3/50], Step [50/50], Loss: 42253.9492
+Epoch [4/50], Step [25/50], Loss: 56533.1953
+Epoch [4/50], Step [50/50], Loss: 40298.6211
+Epoch [5/50], Step [25/50], Loss: 55375.6797
+Epoch [5/50], Step [50/50], Loss: 79432.6641
+Epoch [6/50], Step [25/50], Loss: 40109.8281
+CURRNET MODEL seq_len: 32
+CURRENT MODEL: TwoEyes
+TRAIN...
+Epoch [1/50], Step [25/50], Loss: 115415.2422
+Epoch [1/50], Step [50/50], Loss: 128112.0547
+Epoch [2/50], Step [25/50], Loss: 120053.4922
+Epoch [2/50], Step [50/50], Loss: 128720.8828
+Epoch [3/50], Step [25/50], Loss: 99428.5703
+Epoch [3/50], Step [50/50], Loss: 58530.1445
+Epoch [4/50], Step [25/50], Loss: 72077.6562
+Epoch [4/50], Step [50/50], Loss: 125492.7109
+Epoch [5/50], Step [25/50], Loss: 60738.8711
+Epoch [5/50], Step [50/50], Loss: 24407.7676
+Epoch [6/50], Step [25/50], Loss: 40242.8164
+Epoch [6/50], Step [50/50], Loss: 57565.7383
+Epoch [7/50], Step [25/50], Loss: 33929.9883
+Epoch [7/50], Step [50/50], Loss: 46517.3320
+Epoch [8/50], Step [25/50], Loss: 10291.8848
+Epoch [8/50], Step [50/50], Loss: 47638.2500
+Epoch [9/50], Step [25/50], Loss: 12207.4600
+Epoch [9/50], Step [50/50], Loss: 31676.0938
+Epoch [10/50], Step [25/50], Loss: 6094.2329
+Epoch [10/50], Step [50/50], Loss: 30238.0059
+Epoch [11/50], Step [25/50], Loss: 2304.2449
+Epoch [11/50], Step [50/50], Loss: 10466.0303
+Epoch [12/50], Step [25/50], Loss: 3881.9331
+Epoch [12/50], Step [50/50], Loss: 21166.6055
+Epoch [13/50], Step [25/50], Loss: 3082.5454
+Epoch [13/50], Step [50/50], Loss: 42238.7930
+Epoch [14/50], Step [25/50], Loss: 3783.5615
+Epoch [14/50], Step [50/50], Loss: 9302.5898
+Epoch [15/50], Step [25/50], Loss: 1563.3196
+Epoch [15/50], Step [50/50], Loss: 4198.7163
+Epoch [16/50], Step [25/50], Loss: 2177.0776
+Epoch [16/50], Step [50/50], Loss: 28885.6309
+Epoch [17/50], Step [25/50], Loss: 1736.0872
+Epoch [17/50], Step [50/50], Loss: 20433.5293
+Epoch [18/50], Step [25/50], Loss: 1542.3794
+Epoch [18/50], Step [50/50], Loss: 19623.1797
+Epoch [19/50], Step [25/50], Loss: 2353.7290
+Epoch [19/50], Step [50/50], Loss: 3751.0676
+Epoch [20/50], Step [25/50], Loss: 1135.4640
+Epoch [20/50], Step [50/50], Loss: 20575.8262
+Epoch [21/50], Step [25/50], Loss: 3587.1555
+Epoch [21/50], Step [50/50], Loss: 9338.9912
+Epoch [22/50], Step [25/50], Loss: 1235.0721
+Epoch [22/50], Step [50/50], Loss: 6288.1626
+Epoch [23/50], Step [25/50], Loss: 2387.4900
+Epoch [23/50], Step [50/50], Loss: 11757.9219
+Epoch [24/50], Step [25/50], Loss: 3230.7654
+Epoch [24/50], Step [50/50], Loss: 9165.9395
+Epoch [25/50], Step [25/50], Loss: 1429.5752
+Epoch [25/50], Step [50/50], Loss: 8545.2490
+Epoch [26/50], Step [25/50], Loss: 1500.3232
+Epoch [26/50], Step [50/50], Loss: 13539.7891
+Epoch [27/50], Step [25/50], Loss: 5509.1880
+Epoch [27/50], Step [50/50], Loss: 38949.6133
+Epoch [28/50], Step [25/50], Loss: 3684.7068
+Epoch [28/50], Step [50/50], Loss: 33797.4648
+Epoch [29/50], Step [25/50], Loss: 2387.8459
+Epoch [29/50], Step [50/50], Loss: 11389.1172
+Epoch [30/50], Step [25/50], Loss: 1638.3640
+Epoch [30/50], Step [50/50], Loss: 13331.9111
+Epoch [31/50], Step [25/50], Loss: 3194.2849
+Epoch [31/50], Step [50/50], Loss: 2541.4468
+Epoch [32/50], Step [25/50], Loss: 3897.3025
+Epoch [32/50], Step [50/50], Loss: 38442.1758
+Epoch [33/50], Step [25/50], Loss: 3267.7664
+Epoch [33/50], Step [50/50], Loss: 12825.5166
+Epoch [34/50], Step [25/50], Loss: 3096.0793
+Epoch [34/50], Step [50/50], Loss: 28606.5332
+Epoch [35/50], Step [25/50], Loss: 1841.0068
+Epoch [35/50], Step [50/50], Loss: 16819.4648
+Epoch [36/50], Step [25/50], Loss: 3234.3325
+Epoch [36/50], Step [50/50], Loss: 17338.6699
+Epoch [37/50], Step [25/50], Loss: 2219.0542
+Epoch [37/50], Step [50/50], Loss: 13513.3945
+Epoch [38/50], Step [25/50], Loss: 2440.7163
+Epoch [38/50], Step [50/50], Loss: 26467.3125
+Epoch [39/50], Step [25/50], Loss: 1805.4845
+Epoch [39/50], Step [50/50], Loss: 3248.2898
+Epoch [40/50], Step [25/50], Loss: 1049.0635
+Epoch [40/50], Step [50/50], Loss: 19339.9844
+Epoch [41/50], Step [25/50], Loss: 1525.2500
+Epoch [41/50], Step [50/50], Loss: 40710.8711
+Epoch [42/50], Step [25/50], Loss: 2294.7004
+Epoch [42/50], Step [50/50], Loss: 5459.0449
+Epoch [43/50], Step [25/50], Loss: 5793.3921
+Epoch [43/50], Step [50/50], Loss: 7166.0259
+Epoch [44/50], Step [25/50], Loss: 2955.6123
+Epoch [44/50], Step [50/50], Loss: 10474.7852
+Epoch [45/50], Step [25/50], Loss: 1737.6285
+Epoch [45/50], Step [50/50], Loss: 12190.2939
+Epoch [46/50], Step [25/50], Loss: 3112.6670
+Epoch [46/50], Step [50/50], Loss: 47436.9492
+Epoch [47/50], Step [25/50], Loss: 2951.7031
+Epoch [47/50], Step [50/50], Loss: 38733.3320
+Epoch [48/50], Step [25/50], Loss: 2191.4893
+Epoch [48/50], Step [50/50], Loss: 5431.6719
+Epoch [49/50], Step [25/50], Loss: 1696.0978
+Epoch [49/50], Step [50/50], Loss: 11370.1865
+Epoch [50/50], Step [25/50], Loss: 1890.8224
+Epoch [50/50], Step [50/50], Loss: 15005.8486
+CURRNET MODEL seq_len: 32
+CURRENT MODEL: TwoEyes
+./rnn/train/60/
+2453
+LOADING DATA...
+END LOAD DATA
+TRAIN...
+Epoch [1/50], Step [25/50], Loss: 115415.2422
+Epoch [1/50], Step [50/50], Loss: 128112.0547
+Epoch [2/50], Step [25/50], Loss: 120053.4922
+Epoch [2/50], Step [50/50], Loss: 128720.8828
+Epoch [3/50], Step [25/50], Loss: 99428.5703
+Epoch [3/50], Step [50/50], Loss: 58530.1445
+Epoch [4/50], Step [25/50], Loss: 72077.6562
+Epoch [4/50], Step [50/50], Loss: 125492.7109
+Epoch [5/50], Step [25/50], Loss: 60738.8711
+Epoch [5/50], Step [50/50], Loss: 24407.7676
+Epoch [6/50], Step [25/50], Loss: 40242.8164
+Epoch [6/50], Step [50/50], Loss: 57565.7383
+Epoch [7/50], Step [25/50], Loss: 33929.9883
+Epoch [7/50], Step [50/50], Loss: 46517.3320
+Epoch [8/50], Step [25/50], Loss: 10291.8848
+Epoch [8/50], Step [50/50], Loss: 47638.2500
+Epoch [9/50], Step [25/50], Loss: 12207.4600
+Epoch [9/50], Step [50/50], Loss: 31676.0938
+Epoch [10/50], Step [25/50], Loss: 6094.2329
+Epoch [10/50], Step [50/50], Loss: 30238.0059
+Epoch [11/50], Step [25/50], Loss: 2304.2449
+Epoch [11/50], Step [50/50], Loss: 10466.0303
+Epoch [12/50], Step [25/50], Loss: 3881.9331
+Epoch [12/50], Step [50/50], Loss: 21166.6055
+Epoch [13/50], Step [25/50], Loss: 3082.5454
+Epoch [13/50], Step [50/50], Loss: 42238.7930
+Epoch [14/50], Step [25/50], Loss: 3783.5615
+Epoch [14/50], Step [50/50], Loss: 9302.5898
+Epoch [15/50], Step [25/50], Loss: 1563.3196
+Epoch [15/50], Step [50/50], Loss: 4198.7163
+Epoch [16/50], Step [25/50], Loss: 2177.0776
+Epoch [16/50], Step [50/50], Loss: 28885.6309
+Epoch [17/50], Step [25/50], Loss: 1736.0872
+Epoch [17/50], Step [50/50], Loss: 20433.5293
+Epoch [18/50], Step [25/50], Loss: 1542.3794
+Epoch [18/50], Step [50/50], Loss: 19623.1797
+Epoch [19/50], Step [25/50], Loss: 2353.7290
+Epoch [19/50], Step [50/50], Loss: 3751.0676
+Epoch [20/50], Step [25/50], Loss: 1135.4640
+Epoch [20/50], Step [50/50], Loss: 20575.8262
+Epoch [21/50], Step [25/50], Loss: 3587.1555
+Epoch [21/50], Step [50/50], Loss: 9338.9912
+Epoch [22/50], Step [25/50], Loss: 1235.0721
+Epoch [22/50], Step [50/50], Loss: 6288.1626
+Epoch [23/50], Step [25/50], Loss: 2387.4900
+Epoch [23/50], Step [50/50], Loss: 11757.9219
+Epoch [24/50], Step [25/50], Loss: 3230.7654
+Epoch [24/50], Step [50/50], Loss: 9165.9395
+Epoch [25/50], Step [25/50], Loss: 1429.5752
+Epoch [25/50], Step [50/50], Loss: 8545.2490
+Epoch [26/50], Step [25/50], Loss: 1500.3232
+Epoch [26/50], Step [50/50], Loss: 13539.7891
+Epoch [27/50], Step [25/50], Loss: 5509.1880
+Epoch [27/50], Step [50/50], Loss: 38949.6133
+Epoch [28/50], Step [25/50], Loss: 3684.7068
+Epoch [28/50], Step [50/50], Loss: 33797.4648
+Epoch [29/50], Step [25/50], Loss: 2387.8459
+Epoch [29/50], Step [50/50], Loss: 11389.1172
+Epoch [30/50], Step [25/50], Loss: 1638.3640
+Epoch [30/50], Step [50/50], Loss: 13331.9111
+Epoch [31/50], Step [25/50], Loss: 3194.2849
+Epoch [31/50], Step [50/50], Loss: 2541.4468
+Epoch [32/50], Step [25/50], Loss: 3897.3025
+Epoch [32/50], Step [50/50], Loss: 38442.1758
+Epoch [33/50], Step [25/50], Loss: 3267.7664
+Epoch [33/50], Step [50/50], Loss: 12825.5166
+Epoch [34/50], Step [25/50], Loss: 3096.0793
+Epoch [34/50], Step [50/50], Loss: 28606.5332
+Epoch [35/50], Step [25/50], Loss: 1841.0068
+Epoch [35/50], Step [50/50], Loss: 16819.4648
+Epoch [36/50], Step [25/50], Loss: 3234.3325
+Epoch [36/50], Step [50/50], Loss: 17338.6699
+Epoch [37/50], Step [25/50], Loss: 2219.0542
+Epoch [37/50], Step [50/50], Loss: 13513.3945
+Epoch [38/50], Step [25/50], Loss: 2440.7163
+Epoch [38/50], Step [50/50], Loss: 26467.3125
+Epoch [39/50], Step [25/50], Loss: 1805.4845
+Epoch [39/50], Step [50/50], Loss: 3248.2898
+Epoch [40/50], Step [25/50], Loss: 1049.0635
+Epoch [40/50], Step [50/50], Loss: 19339.9844
+Epoch [41/50], Step [25/50], Loss: 1525.2500
+Epoch [41/50], Step [50/50], Loss: 40710.8711
+Epoch [42/50], Step [25/50], Loss: 2294.7004
+Epoch [42/50], Step [50/50], Loss: 5459.0449
+Epoch [43/50], Step [25/50], Loss: 5793.3921
+Epoch [43/50], Step [50/50], Loss: 7166.0259
+Epoch [44/50], Step [25/50], Loss: 2955.6123
+Epoch [44/50], Step [50/50], Loss: 10474.7852
+Epoch [45/50], Step [25/50], Loss: 1737.6285
+Epoch [45/50], Step [50/50], Loss: 12190.2939
+Epoch [46/50], Step [25/50], Loss: 3112.6670
+Epoch [46/50], Step [50/50], Loss: 47436.9492
+Epoch [47/50], Step [25/50], Loss: 2951.7031
+Epoch [47/50], Step [50/50], Loss: 38733.3320
+Epoch [48/50], Step [25/50], Loss: 2191.4893
+Epoch [48/50], Step [50/50], Loss: 5431.6719
+Epoch [49/50], Step [25/50], Loss: 1696.0978
+Epoch [49/50], Step [50/50], Loss: 11370.1865
+Epoch [50/50], Step [25/50], Loss: 1890.8224
+Epoch [50/50], Step [50/50], Loss: 15005.8486
+rnn/test/60/
+248
+LOADING DATA...
+END LOAD DATA
+Loss: 1596.5210
+Loss: 2027.0492
+Loss: 14875.5820
+Loss: 1744.5114
+Loss: 2008.3029
+MIN LOSS: 1596.52099609375
+TOTAL LOSS: 2008.3028564453125
+AVG LOSS:4450.393286132812CURRNET MODEL seq_len: 32
+CURRENT MODEL: TwoEyes
+CURRNET MODEL seq_len: 32
+CURRENT MODEL: TwoEyes
+TRAIN...
+CURRNET MODEL seq_len: 32
+CURRENT MODEL: TwoEyes
+TRAIN...
+Epoch [1/50], Step [25/50], Loss: 102868.7578
