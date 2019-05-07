@@ -6,13 +6,13 @@ device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 num_epochs = 50
 num_classes = 2
-batch_size = 10
+batch_size = 50
 sequence_length = 16
 learning_rate = 0.001
 
 
-def train_model(seq_len):
-    train_dataset = rnn.dataset.Dataset(seq_len=seq_len)
+def train_model(seq_len, dataset_seq_len=60):
+    train_dataset = rnn.dataset.Dataset(seq_len=seq_len, dataset_seq_len=dataset_seq_len)
 
     train_loader = torch.utils.data.DataLoader(dataset=train_dataset,
                                                batch_size=batch_size,
@@ -41,7 +41,7 @@ def train_model(seq_len):
             loss.backward()
             optimizer.step()
 
-            if (i + 1) % 10 == 0:
+            if (i + 1) % 25 == 0:
                 print('Epoch [{}/{}], Step [{}/{}], Loss: {:.4f}'
                       .format(epoch + 1, num_epochs, i + 1, total_step, loss.item()))
 
@@ -62,6 +62,8 @@ def test_model(model, seq_len):
                                                shuffle=True)
     min_loss = 999999
 
+    sum_loss = 0
+
     with torch.no_grad():
         for i, (eye_left, eye_right, face, pos) in enumerate(test_loader):
             eye_left = eye_left.to(device)
@@ -76,8 +78,10 @@ def test_model(model, seq_len):
             if loss.item() < min_loss:
                 min_loss = loss.item()
 
+            sum_loss += loss.item()
+
             print('Loss: {:.4f}'.format(loss.item()))
 
         print('MIN LOSS: {} '.format(min_loss))
         print('TOTAL LOSS: {} '.format(loss.item()))
-
+        print('AVG LOSS:{}'.format(sum_loss / test_dataset.__len__()))

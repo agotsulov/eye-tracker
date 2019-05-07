@@ -1,7 +1,10 @@
 import rnn.train
 
-model = rnn.train.train_model(16)
+models_seq_len = [1, 2, 4, 6, 8, 10, 16, 32]
 
-rnn.train.test_model(model, 16)
+for i in models_seq_len:
+    print("Current model seq_len:{}".format(i))
+    model = rnn.train.train_model(i)
+    rnn.train.test_model(model, i)
 
 

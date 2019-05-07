@@ -40,17 +40,17 @@ class TwoEyes(nn.Module):
             nn.BatchNorm1d(68 * 2 * 2)
         )
         self.lin2 = nn.Sequential(
-            nn.Linear(256 * 4 * 4 * 2 + 68 * 2 * 2, 1024),
+            nn.Linear(256 * 4 * 4 * 2 + 68 * 2 * 2, 4096),
             nn.ReLU(inplace=True),
-            nn.BatchNorm1d(1024),
-            nn.Linear(1024, 1024),
+            nn.BatchNorm1d(4096),
+            nn.Linear(4096, 2048),
             nn.ReLU(inplace=True),
-            nn.BatchNorm1d(1024)
+            nn.BatchNorm1d(2048)
         )
         self.seq_len = seq_len
         self.batch_size = batch_size
         self.fc = nn.Sequential(
-            nn.Linear(1024, 1024),
+            nn.Linear(2048, 1024),
             nn.ReLU(inplace=True),
             nn.BatchNorm1d(1024),
             nn.Linear(1024, num_classes),

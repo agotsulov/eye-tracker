@@ -38,7 +38,7 @@ inst = pygame.image.load('inst.png')
 infoObject = pygame.display.Info()
 print(infoObject)
 # screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
-screen = pygame.display.set_mode((0, 0))
+screen = pygame.display.set_mode((640, 480))
 # Костыли так как фуллскрине нельзя alt+tab ,но и открыть окно на весь экрано просто нельзя там рамка(
 time.sleep(0.1)
 
@@ -61,12 +61,12 @@ if not os.path.exists(dir):
     os.makedirs(dir)
 
 batch_size = 50
-seq_len = 16
+seq_len = 4
+max_seq_len = 60
 
 model = utility.load_model('./rnn/models/model_{}.pth'.format(seq_len),
                            device,
                            rnn.model.TwoEyes(2, batch_size, seq_len))
-
 
 eyes_left = deque()
 eyes_right = deque()
@@ -74,7 +74,7 @@ faces = deque()
 points = deque()
 
 while not _quit:
-    time.sleep(1 / 30)
+    time.sleep(1 / 60)
 
     eyes = None
     shape = None
@@ -110,22 +110,24 @@ while not _quit:
             faces.append(shape)
             points.append([x, y])
 
-            if len(eyes_left) > seq_len:
+            if len(eyes_left) > max_seq_len:
                 eyes_left.popleft()
                 eyes_right.popleft()
                 faces.popleft()
                 points.popleft()
 
+
+
     # Predict
-    if len(eyes_left) == seq_len and model is not None:
+    if len(points) >= seq_len and model is not None:
 
         # print(np.array([eyes_left]).transpose((0, 1, 4, 2, 3)).shape)
-        # print(np.array([faces]).shape)
-        _eyes_left = np.array([eyes_left]).transpose((0, 1, 4, 2, 3)).reshape((1, seq_len * 3, 32, 32))
+        # print(np.array([eyes_left]).shape)
+        _eyes_left = np.array([eyes_left])[:, -seq_len:, :, :, :].transpose((0, 1, 4, 2, 3)).reshape((1, seq_len * 3, 32, 32))
         # print(_eyes_left.shape)
         # print(np.array([eyes_left])[0, 0, :, :, 0] == _eyes_left[0, 0, :, :])
-        _eyes_right = np.array([eyes_right]).transpose((0, 1, 4, 2, 3)).reshape((1, seq_len * 3, 32, 32))
-        _faces = np.array([faces])
+        _eyes_right = np.array([eyes_right])[:, -seq_len:, :, :, :].transpose((0, 1, 4, 2, 3)).reshape((1, seq_len * 3, 32, 32))
+        _faces = np.array([faces])[:, -seq_len:, :, :]
 
         eyes_left_torch = torch.from_numpy(_eyes_left).float().to(device)
         eyes_right_torch = torch.from_numpy(_eyes_right).float().to(device)
@@ -159,8 +161,11 @@ while not _quit:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 _quit = True
-            if event.key == pygame.K_SPACE and len(eyes_left) == seq_len:
-                rnn.dataset.save_data(seq_len, list(eyes_left), list(eyes_right), list(faces), list(points))
+            if event.key == pygame.K_SPACE and len(points) >= max_seq_len:
+                rnn.dataset.save_data(max_seq_len, list(eyes_left), list(eyes_right), list(faces), list(points))
+            if event.key == pygame.K_t:
+                model = rnn.train.train_model(seq_len)
+                rnn.train.test_model(model, seq_len)
         if event.type == pygame.QUIT:
             _quit = True
 
