@@ -110,8 +110,6 @@ while not _quit:
                 faces.popleft()
                 points.popleft()
 
-
-
     # Predict
     if len(points) >= seq_len and model is not None:
 

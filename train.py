@@ -31,6 +31,7 @@ def train_model(model, seq_len, dataset_seq_len=60):
                                                batch_size=batch_size,
                                                shuffle=True)
 
+
     criterion = torch.nn.MSELoss().cuda()
     optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 
@@ -48,7 +49,6 @@ def train_model(model, seq_len, dataset_seq_len=60):
             outputs = model(eye_left, eye_right, face)
 
             loss = criterion(outputs, pos[:, -1, :])
-
             # Backward and optimize
             optimizer.zero_grad()
             loss.backward()
@@ -59,8 +59,6 @@ def train_model(model, seq_len, dataset_seq_len=60):
                          .format(epoch + 1, num_epochs, i + 1, total_step, loss.item()))
 
     torch.save(model.state_dict(), './models/{}/model_{}.pth'.format(model.__class__.__name__, seq_len))
-
-
 
     return model
 
@@ -75,12 +73,16 @@ def test_model(model, seq_len):
     test_loader = torch.utils.data.DataLoader(dataset=test_dataset,
                                                batch_size=batch_size,
                                                shuffle=True)
-    min_loss = 999999
 
+    min_error = 999999
+    max_error = 0
+    sum_error = 0
+    count_error = 0
+
+    min_loss = 999999
+    max_loss = 0
     sum_loss = 0
     count_loss = 0
-
-    max_loss = 0
 
     with torch.no_grad():
         for i, (eye_left, eye_right, face, pos) in enumerate(test_loader):
@@ -91,19 +93,41 @@ def test_model(model, seq_len):
 
             # Forward pass
             out = model(eye_left, eye_right, face)
-            loss = criterion(out, pos[:, -1, :])
+            pos = pos[:, -1, :]
+            loss = criterion(out, pos)
+
+            out = out.cpu().detach().numpy()
+            pos = pos.cpu().numpy()
 
             if loss.item() < min_loss:
                 min_loss = loss.item()
-
             if loss.item() > max_loss:
                 max_loss = loss.item()
-
             sum_loss += loss.item()
             count_loss += 1
 
-            log.info('Loss: {:.4f}'.format(loss.item()))
+            log.info('MSELoss: {:.4f}'.format(loss.item()))
 
-        log.info('MIN LOSS: {} '.format(min_loss))
-        log.info('TOTAL LOSS: {} '.format(loss.item()))
-        log.info('AVG LOSS: {}'.format(sum_loss / count_loss))
+            for b in range(pos.shape[0]):
+                o = out[b]
+                p = pos[b]
+
+                error = math.sqrt((o[0] - p[0])**2 + (o[1] - p[1])**2)
+
+                if error < min_error:
+                    min_error = error
+                if error > max_error:
+                    max_error = error
+                sum_error += error
+
+                count_error += 1
+
+                log.info('error: {:.4f}'.format(error))
+
+        log.info('MIN MSELoss: {} '.format(min_loss))
+        log.info('MIN MSELoss: {} '.format(max_loss))
+        log.info('AVG MSELoss: {}'.format(sum_loss / count_loss))
+        log.info('MIN error: {} '.format(min_error))
+        log.info('MIN error: {} '.format(max_error))
+        log.info('AVG error: {}'.format(sum_error / count_error))
+
