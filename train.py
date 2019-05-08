@@ -1,14 +1,15 @@
 import torch
 import dataset
 import math
+import numpy as np
+import os
 import logging
 
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 num_epochs = 50
 num_classes = 2
-batch_size = 50
-sequence_length = 16
+batch_size = 25
 learning_rate = 0.001
 
 log = logging.getLogger("train")
@@ -30,7 +31,6 @@ def train_model(model, seq_len, dataset_seq_len=60):
     train_loader = torch.utils.data.DataLoader(dataset=train_dataset,
                                                batch_size=batch_size,
                                                shuffle=True)
-
 
     criterion = torch.nn.MSELoss().cuda()
     optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
@@ -54,11 +54,14 @@ def train_model(model, seq_len, dataset_seq_len=60):
             loss.backward()
             optimizer.step()
 
-            if (i + 1) % 25 == 0:
+            if (i + 1) % 50 == 0:
                 log.info('Epoch [{}/{}], Step [{}/{}], Loss: {:.4f}'
                          .format(epoch + 1, num_epochs, i + 1, total_step, loss.item()))
 
-    torch.save(model.state_dict(), './models/{}/model_{}.pth'.format(model.__class__.__name__, seq_len))
+    dirname = './models/{}/'.format(model.__class__.__name__)
+    if not os.path.exists(dirname):
+        os.makedirs(dirname)
+    torch.save(model.state_dict(), dirname + 'model_{}.pth'.format(seq_len))
 
     return model
 
@@ -78,6 +81,7 @@ def test_model(model, seq_len):
     max_error = 0
     sum_error = 0
     count_error = 0
+    errors = np.zeros(test_dataset.__len__())
 
     min_loss = 999999
     max_loss = 0
@@ -99,15 +103,6 @@ def test_model(model, seq_len):
             out = out.cpu().detach().numpy()
             pos = pos.cpu().numpy()
 
-            if loss.item() < min_loss:
-                min_loss = loss.item()
-            if loss.item() > max_loss:
-                max_loss = loss.item()
-            sum_loss += loss.item()
-            count_loss += 1
-
-            log.info('MSELoss: {:.4f}'.format(loss.item()))
-
             for b in range(pos.shape[0]):
                 o = out[b]
                 p = pos[b]
@@ -120,14 +115,25 @@ def test_model(model, seq_len):
                     max_error = error
                 sum_error += error
 
-                count_error += 1
+                errors[count_error] = error
 
-                log.info('error: {:.4f}'.format(error))
+                count_error += 1
+                # log.info('error: {:.4f}'.format(error))
+
+            if loss.item() < min_loss:
+                min_loss = loss.item()
+            if loss.item() > max_loss:
+                max_loss = loss.item()
+            sum_loss += loss.item()
+            count_loss += 1
+
+            log.info('MSELoss: {:.4f}'.format(loss.item()))
 
         log.info('MIN MSELoss: {} '.format(min_loss))
-        log.info('MIN MSELoss: {} '.format(max_loss))
+        log.info('MAX MSELoss: {} '.format(max_loss))
         log.info('AVG MSELoss: {}'.format(sum_loss / count_loss))
-        log.info('MIN error: {} '.format(min_error))
-        log.info('MIN error: {} '.format(max_error))
-        log.info('AVG error: {}'.format(sum_error / count_error))
 
+        log.info('MIN error: {} '.format(min_error))
+        log.info('MAX error: {} '.format(max_error))
+        log.info('AVG error: {}'.format(sum_error / count_error))
+        log.info('MEAD error: {}'.format(np.median(errors)))

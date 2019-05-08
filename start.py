@@ -58,9 +58,25 @@ batch_size = 50
 seq_len = 4
 max_seq_len = 60
 
-model = utility.load_model('./models/model_{}.pth'.format(seq_len),
+model = utility.load_model('./models/TwoEyes/model_{}.pth'.format(seq_len),
                            device,
                            model.TwoEyes(2, seq_len))
+'''
+current_seq_len = 0
+current_model = 0
+
+models_seq_len = [1, 2, 4, 6, 8, 10, 32]
+
+models = [
+    model.TwoEyes,
+    # rnn.model.TwoEyesSameLayer
+]
+def refresh():
+    return utility.load_model('./models/{}/model_{}.pth'
+                               .format(models[current_model].__class__.__name__, seq_len),
+                               device,
+                               models[current_model](2, models_seq_len[c]))
+'''
 
 eyes_left = deque()
 eyes_right = deque()
@@ -115,10 +131,10 @@ while not _quit:
 
         # print(np.array([eyes_left]).transpose((0, 1, 4, 2, 3)).shape)
         # print(np.array([eyes_left]).shape)
-        _eyes_left = np.array([eyes_left])[:, -seq_len:, :, :, :].transpose((0, 1, 4, 2, 3)).reshape((1, seq_len * 3, 32, 32))
+        _eyes_left = np.array([eyes_left])[:, -seq_len:, :, :, :].transpose((0, 1, 4, 2, 3))
         # print(_eyes_left.shape)
         # print(np.array([eyes_left])[0, 0, :, :, 0] == _eyes_left[0, 0, :, :])
-        _eyes_right = np.array([eyes_right])[:, -seq_len:, :, :, :].transpose((0, 1, 4, 2, 3)).reshape((1, seq_len * 3, 32, 32))
+        _eyes_right = np.array([eyes_right])[:, -seq_len:, :, :, :].transpose((0, 1, 4, 2, 3))
         _faces = np.array([faces])[:, -seq_len:, :, :]
 
         eyes_left_torch = torch.from_numpy(_eyes_left).float().to(device)
@@ -154,10 +170,12 @@ while not _quit:
             if event.key == pygame.K_ESCAPE:
                 _quit = True
             if event.key == pygame.K_SPACE and len(points) >= max_seq_len:
+                print("SAVE")
                 dataset.save_data(max_seq_len, list(eyes_left), list(eyes_right), list(faces), list(points))
             if event.key == pygame.K_t:
-                model = train.train_model(seq_len)
+                model = train.train_model(model, seq_len, max_seq_len)
                 train.test_model(model, seq_len)
+
         if event.type == pygame.QUIT:
             _quit = True
 

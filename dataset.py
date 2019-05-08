@@ -30,7 +30,7 @@ def save_data(seq_len, eyes_left, eyes_right, faces, points, test_split=0.1):
 
     dirname = dir_seq_len + '/' + str(uuid.uuid4()) + '/'
     os.mkdir(dirname)
-
+    print(dirname)
     eyes_left = np.array(eyes_left)
     eyes_right = np.array(eyes_right)
     faces = np.array(faces)
@@ -69,8 +69,10 @@ class Dataset(torch.utils.data.Dataset):
             # print(curr)
             self.face.append(np.load(self.dirname + curr + '/faces.npy')[-seq_len:, :, :])
             self.points.append(np.load(self.dirname + curr + '/points.npy')[-seq_len:, :])
-            self.eye_left.append(np.load(self.dirname + curr + '/eye_left.npy')[-seq_len * 3:, :, :])
-            self.eye_right.append(np.load(self.dirname + curr + '/eye_right.npy')[-seq_len * 3:, :, :])
+            self.eye_left.append(np.load(self.dirname + curr + '/eye_left.npy')[-seq_len * 3:, :, :]
+                                 .reshape((seq_len, 3, 32, 32)))
+            self.eye_right.append(np.load(self.dirname + curr + '/eye_right.npy')[-seq_len * 3:, :, :]
+                                  .reshape((seq_len, 3, 32, 32)))
             # print(-seq_len * 3)
             # print(np.load(self.dirname + curr + '/eye_left.npy').shape)
             # print(self.eye_left[index].shape)
@@ -85,4 +87,44 @@ class Dataset(torch.utils.data.Dataset):
                torch.from_numpy(np.array(self.eye_right[index])).float(), \
                torch.from_numpy(np.array(self.face[index])).float(), \
                torch.from_numpy(np.array(self.points[index])).float()
+
+class DatasetLSTM(torch.utils.data.Dataset):
+    def __init__(self, dirname='./train', seq_len=5, dataset_seq_len=60):
+        self.eye_left = []
+        self.eye_right = []
+        self.face = []
+        self.points = []
+        self.dirname = dirname + '/' + str(dataset_seq_len) + '/'
+        self.size = len(os.listdir(self.dirname))
+
+        names = os.listdir(self.dirname)
+
+        log.info(self.dirname)
+        log.info(self.size)
+        log.info("LOADING DATA...")
+
+        for index in range(len(os.listdir(self.dirname))):
+            curr = names[index]
+            # print(curr)
+            self.face.append(np.load(self.dirname + curr + '/faces.npy')[-seq_len:, :, :])
+            self.points.append(np.load(self.dirname + curr + '/points.npy')[-seq_len:, :])
+            self.eye_left.append(np.load(self.dirname + curr + '/eye_left.npy')[-seq_len * 3:, :, :])
+            self.eye_right.append(np.load(self.dirname + curr + '/eye_right.npy')[-seq_len * 3:, :, :])
+
+
+            # print(-seq_len * 3)
+            # print(np.load(self.dirname + curr + '/eye_left.npy').shape)
+            # print(self.eye_left[index].shape)
+            # print(self.points[index])
+        log.info("END LOAD DATA")
+
+    def __len__(self):
+        return self.size
+
+    def __getitem__(self, index):
+        return torch.from_numpy(np.array(self.eye_left[index])).float(), \
+               torch.from_numpy(np.array(self.eye_right[index])).float(), \
+               torch.from_numpy(np.array(self.face[index])).float(), \
+               torch.from_numpy(np.array(self.points[index])).float()
+
 

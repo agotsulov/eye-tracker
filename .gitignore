@@ -24,3 +24,5 @@ pddata/
 train/
 
 test/
+
+*.log
