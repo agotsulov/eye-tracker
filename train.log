@@ -5923,3 +5923,26 @@
 2019-05-08 23:22:21,222 - dataset - INFO - ./train/60/
 2019-05-08 23:22:21,222 - dataset - INFO - 5158
 2019-05-08 23:22:21,222 - dataset - INFO - LOADING DATA...
+2019-05-08 23:52:50,445 - dataset - INFO - ./train/60/
+2019-05-08 23:52:50,445 - dataset - INFO - 100
+2019-05-08 23:52:50,445 - dataset - INFO - LOADING DATA...
+2019-05-08 23:52:50,539 - dataset - INFO - END LOAD DATA
+2019-05-08 23:52:52,615 - train - INFO - CURRENT MODEL seq_len: 1
+2019-05-08 23:52:52,615 - train - INFO - CURRENT MODEL: TwoEyes
+2019-05-08 23:52:52,616 - train - INFO - TRAIN...
+2019-05-08 23:53:33,216 - dataset - INFO - ./train/60/
+2019-05-08 23:53:33,217 - dataset - INFO - 5222
+2019-05-08 23:53:33,217 - dataset - INFO - LOADING DATA...
+2019-05-09 00:33:31,782 - dataset - INFO - ./train/60/
+2019-05-09 00:33:31,782 - dataset - INFO - 5222
+2019-05-09 00:33:31,782 - dataset - INFO - LOADING DATA...
+2019-05-09 00:33:39,442 - dataset - INFO - ./train/60/
+2019-05-09 00:33:39,442 - dataset - INFO - 5222
+2019-05-09 00:33:39,442 - dataset - INFO - LOADING DATA...
+2019-05-09 00:40:55,255 - dataset - INFO - ./train/60/
+2019-05-09 00:40:55,256 - dataset - INFO - 5222
+2019-05-09 00:40:55,256 - dataset - INFO - LOADING DATA...
+2019-05-09 01:13:13,260 - dataset - INFO - ./val/1/
+2019-05-09 01:13:13,260 - dataset - INFO - 236
+2019-05-09 01:13:13,260 - dataset - INFO - LOADING DATA...
+2019-05-09 01:13:13,471 - dataset - INFO - END LOAD DATA

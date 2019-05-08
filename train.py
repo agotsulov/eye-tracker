@@ -21,12 +21,19 @@ log_console_handler = logging.StreamHandler()
 log.addHandler(log_console_handler)
 log.setLevel(logging.INFO)
 
+val_log = logging.getLogger("val")
+val_formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+val_log_file_handler = logging.FileHandler("val.log")
+val_log_file_handler.setFormatter(formatter)
+val_log.addHandler(val_log_file_handler)
+val_log_console_handler = logging.StreamHandler()
+val_log.addHandler(val_log_console_handler)
+val_log.setLevel(logging.INFO)
 
-def train_model(model, seq_len, dataset_seq_len=60):
+
+def train_model(model, seq_len, train_dataset):
     log.info("CURRENT MODEL seq_len: {}".format(seq_len))
     log.info("CURRENT MODEL: {}".format(model.__class__.__name__))
-
-    train_dataset = dataset.Dataset(seq_len=seq_len, dataset_seq_len=dataset_seq_len)
 
     train_loader = torch.utils.data.DataLoader(dataset=train_dataset,
                                                batch_size=batch_size,
@@ -62,16 +69,14 @@ def train_model(model, seq_len, dataset_seq_len=60):
     if not os.path.exists(dirname):
         os.makedirs(dirname)
     torch.save(model.state_dict(), dirname + 'model_{}.pth'.format(seq_len))
+    log.info('Save new model: ' + dirname + 'model_{}.pth'.format(seq_len))
 
     return model
 
 
-def test_model(model, seq_len):
-    # Test the model
+def test_model(model, test_dataset):
     model.eval()  # eval mode (batchnorm uses moving mean/variance instead of mini-batch mean/variance)
     criterion = torch.nn.MSELoss().cuda()
-
-    test_dataset = dataset.Dataset(dirname='./test', seq_len=seq_len)
 
     test_loader = torch.utils.data.DataLoader(dataset=test_dataset,
                                                batch_size=batch_size,
@@ -127,7 +132,7 @@ def test_model(model, seq_len):
             sum_loss += loss.item()
             count_loss += 1
 
-            log.info('MSELoss: {:.4f}'.format(loss.item()))
+            # log.info('MSELoss: {:.4f}'.format(loss.item()))
 
         log.info('MIN MSELoss: {} '.format(min_loss))
         log.info('MAX MSELoss: {} '.format(max_loss))
@@ -137,3 +142,54 @@ def test_model(model, seq_len):
         log.info('MAX error: {} '.format(max_error))
         log.info('AVG error: {}'.format(sum_error / count_error))
         log.info('MEAD error: {}'.format(np.median(errors)))
+
+
+def val_model(model, val_dataset):
+    model.eval()
+
+    val_log.info("CURRENT MODEL seq_len: {}".format(val_dataset.seq_len))
+    val_log.info("CURRENT MODEL: {}".format(model.__class__.__name__))
+
+    test_loader = torch.utils.data.DataLoader(dataset=val_dataset,
+                                              batch_size=batch_size,
+                                              shuffle=True)
+
+    min_error = 999999
+    max_error = 0
+    sum_error = 0
+    count_error = 0
+    errors = np.zeros(val_dataset.__len__())
+
+    with torch.no_grad():
+        for i, (eye_left, eye_right, face, pos) in enumerate(test_loader):
+            eye_left = eye_left.to(device)
+            eye_right = eye_right.to(device)
+            face = face.to(device)
+            pos = pos.to(device)
+
+            out = model(eye_left, eye_right, face)
+            pos = pos[:, -1, :]
+
+            out = out.cpu().detach().numpy()
+            pos = pos.cpu().numpy()
+
+            for b in range(pos.shape[0]):
+                o = out[b]
+                p = pos[b]
+
+                error = math.sqrt((o[0] - p[0]) ** 2 + (o[1] - p[1]) ** 2)
+
+                if error < min_error:
+                    min_error = error
+                if error > max_error:
+                    max_error = error
+                sum_error += error
+
+                errors[count_error] = error
+
+                count_error += 1
+
+        val_log.info('MIN error: {} '.format(min_error))
+        val_log.info('MAX error: {} '.format(max_error))
+        val_log.info('AVG error: {}'.format(sum_error / count_error))
+        val_log.info('MEAD error: {}'.format(np.median(errors)))

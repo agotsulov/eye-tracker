@@ -55,12 +55,12 @@ y = random.randint(0, max_h)  # infoObject.current_h
 face_detector = utility.FaceDetector()
 
 batch_size = 50
-seq_len = 4
+seq_len = 2
 max_seq_len = 60
 
-model = utility.load_model('./models/TwoEyes/model_{}.pth'.format(seq_len),
+model = utility.load_model('./models/TwoEyesLSTM/model_{}.pth'.format(seq_len),
                            device,
-                           model.TwoEyes(2, seq_len))
+                           model.TwoEyesLSTM(2, seq_len))
 '''
 current_seq_len = 0
 current_model = 0
@@ -175,7 +175,12 @@ while not _quit:
             if event.key == pygame.K_t:
                 model = train.train_model(model, seq_len, max_seq_len)
                 train.test_model(model, seq_len)
-
+            if event.key == pygame.K_1:
+                dataset.save_data(max_seq_len, list(eyes_left), list(eyes_right), list(faces), list(points), val=1)
+            if event.key == pygame.K_2:
+                dataset.save_data(max_seq_len, list(eyes_left), list(eyes_right), list(faces), list(points), val=2)
+            if event.key == pygame.K_3:
+                dataset.save_data(max_seq_len, list(eyes_left), list(eyes_right), list(faces), list(points), val=3)
         if event.type == pygame.QUIT:
             _quit = True
 

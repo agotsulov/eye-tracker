@@ -73,11 +73,11 @@ class TwoEyesSameLayer(nn.Module):
     def __init__(self, num_classes=2, seq_len=5):
         super(TwoEyesSameLayer, self).__init__()
         self.conv_eyes = nn.Sequential(
-            nn.Conv2d(3 * seq_len, 1024, kernel_size=5, padding=2),
+            nn.Conv2d(3 * seq_len, 256, kernel_size=5, padding=2),
             nn.ReLU(inplace=True),
             nn.MaxPool2d(2),
-            nn.BatchNorm2d(1024),
-            nn.Conv2d(1024, 512, kernel_size=3, padding=1),
+            nn.BatchNorm2d(256),
+            nn.Conv2d(256, 512, kernel_size=3, padding=1),
             nn.ReLU(inplace=True),
             nn.MaxPool2d(2),
             nn.BatchNorm2d(512),
