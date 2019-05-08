@@ -7,10 +7,8 @@ import logging
 
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
-num_epochs = 50
 num_classes = 2
 batch_size = 25
-learning_rate = 0.001
 
 log = logging.getLogger("train")
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -20,6 +18,18 @@ log.addHandler(log_file_handler)
 log_console_handler = logging.StreamHandler()
 log.addHandler(log_console_handler)
 log.setLevel(logging.INFO)
+
+test_log = logging.getLogger("test")
+test_formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+test_log_file_handler = logging.FileHandler("train.log")
+test_log_file_handler.setFormatter(formatter)
+test_log.addHandler(test_log_file_handler)
+test_log_file_handler = logging.FileHandler("test.log")
+test_log_file_handler.setFormatter(formatter)
+test_log.addHandler(test_log_file_handler)
+test_log_console_handler = logging.StreamHandler()
+test_log.addHandler(test_log_console_handler)
+test_log.setLevel(logging.INFO)
 
 val_log = logging.getLogger("val")
 val_formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -31,9 +41,11 @@ val_log.addHandler(val_log_console_handler)
 val_log.setLevel(logging.INFO)
 
 
-def train_model(model, seq_len, train_dataset):
+def train_model(model, seq_len, train_dataset, num_epochs=50, learning_rate=0.001):
+
     log.info("CURRENT MODEL seq_len: {}".format(seq_len))
     log.info("CURRENT MODEL: {}".format(model.__class__.__name__))
+    log.info("CURRENT DATASET SIZE: {}".format(train_dataset.__len__()))
 
     train_loader = torch.utils.data.DataLoader(dataset=train_dataset,
                                                batch_size=batch_size,
@@ -77,6 +89,10 @@ def train_model(model, seq_len, train_dataset):
 def test_model(model, test_dataset):
     model.eval()  # eval mode (batchnorm uses moving mean/variance instead of mini-batch mean/variance)
     criterion = torch.nn.MSELoss().cuda()
+
+    test_log.info("CURRENT MODEL seq_len: {}".format(test_dataset.seq_len))
+    test_log.info("CURRENT MODEL: {}".format(model.__class__.__name__))
+    test_log.info("CURRENT DATASET SIZE: {}".format(test_dataset.__len__()))
 
     test_loader = torch.utils.data.DataLoader(dataset=test_dataset,
                                                batch_size=batch_size,
@@ -134,14 +150,14 @@ def test_model(model, test_dataset):
 
             # log.info('MSELoss: {:.4f}'.format(loss.item()))
 
-        log.info('MIN MSELoss: {} '.format(min_loss))
-        log.info('MAX MSELoss: {} '.format(max_loss))
-        log.info('AVG MSELoss: {}'.format(sum_loss / count_loss))
+        test_log.info('MIN MSELoss: {} '.format(min_loss))
+        test_log.info('MAX MSELoss: {} '.format(max_loss))
+        test_log.info('AVG MSELoss: {}'.format(sum_loss / count_loss))
 
-        log.info('MIN error: {} '.format(min_error))
-        log.info('MAX error: {} '.format(max_error))
-        log.info('AVG error: {}'.format(sum_error / count_error))
-        log.info('MEAD error: {}'.format(np.median(errors)))
+        test_log.info('MIN error: {} '.format(min_error))
+        test_log.info('MAX error: {} '.format(max_error))
+        test_log.info('AVG error: {}'.format(sum_error / count_error))
+        test_log.info('MEAD error: {}'.format(np.median(errors)))
 
 
 def val_model(model, val_dataset):
@@ -149,6 +165,7 @@ def val_model(model, val_dataset):
 
     val_log.info("CURRENT MODEL seq_len: {}".format(val_dataset.seq_len))
     val_log.info("CURRENT MODEL: {}".format(model.__class__.__name__))
+    val_log.info("CURRENT DATASET SIZE: {}".format(val_dataset.__len__()))
 
     test_loader = torch.utils.data.DataLoader(dataset=val_dataset,
                                               batch_size=batch_size,

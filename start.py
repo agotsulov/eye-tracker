@@ -181,6 +181,8 @@ while not _quit:
                 dataset.save_data(max_seq_len, list(eyes_left), list(eyes_right), list(faces), list(points), val=2)
             if event.key == pygame.K_3:
                 dataset.save_data(max_seq_len, list(eyes_left), list(eyes_right), list(faces), list(points), val=3)
+            if event.key == pygame.K_4:
+                dataset.save_data(max_seq_len, list(eyes_left), list(eyes_right), list(faces), list(points), val=4)
         if event.type == pygame.QUIT:
             _quit = True
 

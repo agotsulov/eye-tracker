@@ -22,8 +22,6 @@ def load_model(filename, device, model_):
     return model
 
 
-
-
 def predict(eyes, shape, model, device, max_w=1920, max_h=1080):
     if eyes is not None and model is not None:
         eyes = eyes.reshape((1, 3, 64, 32))
