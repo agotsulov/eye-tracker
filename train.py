@@ -8,7 +8,7 @@ import logging
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 num_classes = 2
-batch_size = 25
+batch_size = 15
 
 log = logging.getLogger("train")
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -41,7 +41,7 @@ val_log.addHandler(val_log_console_handler)
 val_log.setLevel(logging.INFO)
 
 
-def train_model(model, seq_len, train_dataset, num_epochs=50, learning_rate=0.001):
+def train_model(model, seq_len, train_dataset, num_epochs=50, learning_rate=0.001, criterion=None):
 
     log.info("CURRENT MODEL seq_len: {}".format(seq_len))
     log.info("CURRENT MODEL: {}".format(model.__class__.__name__))
@@ -50,8 +50,8 @@ def train_model(model, seq_len, train_dataset, num_epochs=50, learning_rate=0.00
     train_loader = torch.utils.data.DataLoader(dataset=train_dataset,
                                                batch_size=batch_size,
                                                shuffle=True)
-
-    criterion = torch.nn.MSELoss().cuda()
+    if criterion is None:
+        criterion = torch.nn.MSELoss().cuda()
     optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 
     log.info("TRAIN...")
@@ -81,14 +81,17 @@ def train_model(model, seq_len, train_dataset, num_epochs=50, learning_rate=0.00
     if not os.path.exists(dirname):
         os.makedirs(dirname)
     torch.save(model.state_dict(), dirname + 'model_{}.pth'.format(seq_len))
-    log.info('Save new model: ' + dirname + 'model_{}.pth'.format(seq_len))
+    torch.save(model.state_dict(), dirname + 'model_{}_{}.pth'.format(train_dataset.__len__(), seq_len))
+    log.info('Save new model: ' + dirname + 'model_{}_{}.pth'.format(train_dataset.__len__(), seq_len))
 
     return model
 
 
-def test_model(model, test_dataset):
+def test_model(model, test_dataset, criterion=None):
     model.eval()  # eval mode (batchnorm uses moving mean/variance instead of mini-batch mean/variance)
-    criterion = torch.nn.MSELoss().cuda()
+
+    if criterion is None:
+        criterion = torch.nn.MSELoss().cuda()
 
     test_log.info("CURRENT MODEL seq_len: {}".format(test_dataset.seq_len))
     test_log.info("CURRENT MODEL: {}".format(model.__class__.__name__))
@@ -159,6 +162,8 @@ def test_model(model, test_dataset):
         test_log.info('AVG error: {}'.format(sum_error / count_error))
         test_log.info('MEAD error: {}'.format(np.median(errors)))
 
+    return test_dataset.__len__(), min_error, max_error, (sum_error / count_error), (np.median(errors)), errors
+
 
 def val_model(model, val_dataset):
     model.eval()
@@ -210,3 +215,5 @@ def val_model(model, val_dataset):
         val_log.info('MAX error: {} '.format(max_error))
         val_log.info('AVG error: {}'.format(sum_error / count_error))
         val_log.info('MEAD error: {}'.format(np.median(errors)))
+
+    return val_dataset.__len__(),  min_error, max_error, (sum_error / count_error), (np.median(errors)), errors

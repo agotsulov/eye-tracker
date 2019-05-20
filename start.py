@@ -55,12 +55,16 @@ y = random.randint(0, max_h)  # infoObject.current_h
 face_detector = utility.FaceDetector()
 
 batch_size = 50
-seq_len = 2
+seq_len = 4
 max_seq_len = 60
 
-model = utility.load_model('./models/TwoEyesLSTM/model_{}.pth'.format(seq_len),
+num_rects = 4
+w_rect = 640 / num_rects
+h_rect = 480 / num_rects
+
+model = utility.load_model('./models/EyeClassifierLSTM/model_10770_{}_{}.pth'.format(num_rects * num_rects, seq_len),
                            device,
-                           model.TwoEyesLSTM(2, seq_len))
+                           model.EyeClassifierLSTM(num_rects * num_rects, seq_len))
 '''
 current_seq_len = 0
 current_model = 0
@@ -142,8 +146,17 @@ while not _quit:
         faces_torch = torch.from_numpy(_faces).float().to(device)
         out = model(eyes_left_torch, eyes_right_torch, faces_torch)
 
-        out = out.cpu().data.numpy()[0]
+        _, predicted = torch.max(out.data, 1)
 
+        # print(predicted)
+
+        pred = predicted.cpu().data.numpy()
+
+        x_ = int(pred % num_rects) * w_rect
+        y_ = int(pred / num_rects) * h_rect
+
+        pygame.draw.rect(screen, (0, 0, 255), (x_, y_, w_rect, h_rect))
+        '''
         x_pred = out[0]
         y_pred = out[1]
 
@@ -157,6 +170,7 @@ while not _quit:
             y_pred = max_h
 
         pygame.draw.circle(screen, (0, 255, 0), (x_pred, y_pred), 12)
+        '''
 
     x, y = pygame.mouse.get_pos()
     # print("{} {}".format(x, y))

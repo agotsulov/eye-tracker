@@ -6,10 +6,11 @@ import torchvision.transforms as transforms
 import uuid
 import random
 import logging
+import math
 
 log = logging.getLogger("dataset")
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-log_file_handler = logging.FileHandler("train.log")
+log_file_handler = logging.FileHandler("logs/train.log")
 log_file_handler.setFormatter(formatter)
 log.addHandler(log_file_handler)
 log_console_handler = logging.StreamHandler()
@@ -81,9 +82,78 @@ class Dataset(torch.utils.data.Dataset):
                                  .reshape((seq_len, 3, 32, 32)))
             self.eye_right.append(np.load(self.dirname + curr + '/eye_right.npy')[-seq_len * 3:, :, :]
                                   .reshape((seq_len, 3, 32, 32)))
+
+            if index % 1000 == 0:
+                print(index)
+
             if index >= max_samples:
                 break
         log.info("END LOAD DATA")
+
+    def __len__(self):
+        return self.size
+
+    def __getitem__(self, index):
+        return torch.from_numpy(np.array(self.eye_left[index])).float(), \
+               torch.from_numpy(np.array(self.eye_right[index])).float(), \
+               torch.from_numpy(np.array(self.face[index])).float(), \
+               torch.from_numpy(np.array(self.points[index])).float()
+
+
+class CDataset(torch.utils.data.Dataset):
+    def __init__(self, num_rects, screen_w=640, screen_h=480, dirname='./train', seq_len=5, dataset_seq_len=60,
+                 max_samples=100000, val=False):
+        self.eye_left = []
+        self.eye_right = []
+        self.face = []
+        self.points = []
+
+        self.heatmap = np.zeros(num_rects * num_rects)
+
+        if val is not True:
+            self.dirname = dirname + '/' + str(dataset_seq_len) + '/'
+        else:
+            self.dirname = dirname + '/'
+        self.size = len(os.listdir(self.dirname))
+        self.seq_len = seq_len
+        if self.size >= max_samples:
+            self.size = max_samples
+
+        names = os.listdir(self.dirname)
+
+        log.info(self.dirname)
+        log.info(self.size)
+        log.info("LOADING DATA...")
+
+        for index in range(len(os.listdir(self.dirname))):
+            curr = names[index]
+            # print(curr)
+            self.face.append(np.load(self.dirname + curr + '/faces.npy')[-seq_len:, :, :])
+            p = np.load(self.dirname + curr + '/points.npy')[-1:, :][0]
+            self.eye_left.append(np.load(self.dirname + curr + '/eye_left.npy')[-seq_len * 3:, :, :]
+                                 .reshape((seq_len, 3, 32, 32)))
+            self.eye_right.append(np.load(self.dirname + curr + '/eye_right.npy')[-seq_len * 3:, :, :]
+                                  .reshape((seq_len, 3, 32, 32)))
+
+            x = math.ceil((p[0]) / (screen_w / num_rects))
+            y = math.ceil((p[1]) / (screen_h / num_rects))
+
+            i = np.zeros(num_rects * num_rects)
+
+            i[(y - 1) * num_rects + (x - 1)] = 1
+            # print(i)
+            self.heatmap[(y - 1) * num_rects + (x - 1)] += 1
+
+            self.points.append(i)
+
+            if index % 1000 == 0:
+                print(index)
+                print(self.heatmap)
+
+            if index >= max_samples:
+                break
+        log.info("END LOAD DATA")
+        print(self.heatmap)
 
     def __len__(self):
         return self.size
