@@ -11,7 +11,9 @@ from scipy.misc import imsave
 
 def load_model(filename, device, model_):
     model = None
+    print("LOAD MODEL: ")
     model_file = os.path.exists(filename)
+    print(filename)
     if model_file:
         print("FOUND MODEL")
         model = model_.to(device)
