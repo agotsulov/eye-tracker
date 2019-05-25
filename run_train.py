@@ -11,6 +11,29 @@ device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 dataset_seq_len = 60
 
+
+def train_test(num_rects_, seq_len_, max_samples_):
+    model_ = model.EyesLSTMWithClassifier(num_classes=2, num_rects=num_rects_, seq_len=seq_len_).cuda()
+
+    train_dataset_ = dataset.Dataset(seq_len=seq_len_, dataset_seq_len=dataset_seq_len, max_samples=max_samples_)
+    model_ = train.train_model(model_, seq_len_, train_dataset_)
+
+    test_dataset_ = dataset.Dataset(dirname='./test', seq_len=seq_len_)
+    train.test_model(model_, test_dataset_, num_rects=num_rects_)
+
+
+train_test(64, 4, 2500)
+train_test(256, 8, 10770)
+train_test(64, 8, 10770)
+train_test(16, 8, 10770)
+train_test(4, 8, 10770)
+
+
+
+
+
+
+
 models = [
     # model.TwoEyes,
     # model.TwoEyesSameLayer,

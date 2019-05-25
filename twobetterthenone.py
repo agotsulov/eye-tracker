@@ -1,14 +1,16 @@
 import torch
 import dataset
-import math
+import utility
+import model
 import numpy as np
+import math
 import os
 import logging
 
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 num_classes = 2
-batch_size = 5
+batch_size = 20
 
 log = logging.getLogger("train")
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -41,7 +43,7 @@ val_log.addHandler(val_log_console_handler)
 val_log.setLevel(logging.INFO)
 
 
-def train_model(model, seq_len, train_dataset, num_epochs=50, learning_rate=0.001, criterion=None):
+def train_model(model, classifier_model, seq_len, train_dataset, num_rects, num_epochs=50, learning_rate=0.001, criterion=None):
 
     log.info("CURRENT MODEL seq_len: {}".format(seq_len))
     log.info("CURRENT MODEL: {}".format(model.__class__.__name__))
@@ -65,7 +67,9 @@ def train_model(model, seq_len, train_dataset, num_epochs=50, learning_rate=0.00
             pos = pos.to(device)
 
             # Forward pass
-            outputs = model(eye_left, eye_right, face)
+            with torch.no_grad():
+                classes = classifier_model(eye_left, eye_right, face)
+            outputs = model(eye_left, eye_right, face, classes)
 
             loss = criterion(outputs, pos[:, -1, :])
             # Backward and optimize
@@ -80,15 +84,15 @@ def train_model(model, seq_len, train_dataset, num_epochs=50, learning_rate=0.00
     dirname = './models/{}/'.format(model.__class__.__name__)
     if not os.path.exists(dirname):
         os.makedirs(dirname)
-    torch.save(model.state_dict(), dirname + 'model_{}.pth'.format(seq_len))
-    torch.save(model.state_dict(), dirname + 'model_{}_{}.pth'.format(train_dataset.__len__(), seq_len))
-    log.info('Save new model: ' + dirname + 'model_{}_{}.pth'.format(train_dataset.__len__(), seq_len))
+    torch.save(model.state_dict(), dirname + 'model_{}_{}_{}.pth'.format(train_dataset.__len__(), seq_len, num_rects))
+    log.info('Save new model: ' + dirname + 'model_{}_{}_{}.pth'.format(train_dataset.__len__(), seq_len, num_rects))
 
     return model
 
 
-def test_model(model, test_dataset, criterion=None, num_rects=4, screen_w=640, screen_h=480):
+def test_model(model, classifier_model, test_dataset, criterion=None, num_rects=4, screen_w=640, screen_h=480):
     model.eval()
+    classifier_model.eval()
 
     if criterion is None:
         criterion = torch.nn.MSELoss().cuda()
@@ -124,7 +128,8 @@ def test_model(model, test_dataset, criterion=None, num_rects=4, screen_w=640, s
             pos = pos.to(device)
 
             # Forward pass
-            out = model(eye_left, eye_right, face)
+            classes = classifier_model(eye_left, eye_right, face)
+            out = model(eye_left, eye_right, face, classes)
             pos = pos[:, -1, :]
             loss = criterion(out, pos)
 
@@ -150,7 +155,6 @@ def test_model(model, test_dataset, criterion=None, num_rects=4, screen_w=640, s
 
                 p_x = math.ceil((p[0]) / (screen_w / num_rects))
                 p_y = math.ceil((p[1]) / (screen_h / num_rects))
-
 
                 if ((p_y - 1) * num_rects + (p_x - 1)) == ((o_y - 1) * num_rects + (o_x - 1)):
                     correct += 1
@@ -178,55 +182,22 @@ def test_model(model, test_dataset, criterion=None, num_rects=4, screen_w=640, s
     print('Accuracy : %d %%' % (100 * correct / total))
     return test_dataset.__len__(), min_error, max_error, (sum_error / count_error), (np.median(errors)), errors
 
-def val_model(model, val_dataset):
-    model.eval()
 
-    val_log.info("CURRENT MODEL seq_len: {}".format(val_dataset.seq_len))
-    val_log.info("CURRENT MODEL: {}".format(model.__class__.__name__))
-    val_log.info("CURRENT DATASET SIZE: {}".format(val_dataset.__len__()))
+def f(num_rects, seq_len, max_samples):
+    c_m = utility.load_model('./models/EyeClassifierLSTM/model_{}_{}_{}.pth'.format(
+        max_samples, num_rects * num_rects, seq_len),
+        device,
+        model.EyeClassifierLSTM(num_rects * num_rects, seq_len))
 
-    test_loader = torch.utils.data.DataLoader(dataset=val_dataset,
-                                              batch_size=batch_size,
-                                              shuffle=True)
+    m = model.EyesLSTMWithClassifier(seq_len=seq_len, num_rects=(num_rects * num_rects)).cuda()
 
-    min_error = 999999
-    max_error = 0
-    sum_error = 0
-    count_error = 0
-    errors = np.zeros(val_dataset.__len__())
+    train_dataset = dataset.Dataset(seq_len=seq_len, dataset_seq_len=60, max_samples=max_samples)
+    m = train_model(m, c_m, seq_len, train_dataset, num_rects)
 
-    with torch.no_grad():
-        for i, (eye_left, eye_right, face, pos) in enumerate(test_loader):
-            eye_left = eye_left.to(device)
-            eye_right = eye_right.to(device)
-            face = face.to(device)
-            pos = pos.to(device)
+    test_dataset_ = dataset.Dataset(dirname='./test', seq_len=seq_len)
+    test_model(m, c_m, test_dataset_, num_rects=num_rects)
 
-            out = model(eye_left, eye_right, face)
-            pos = pos[:, -1, :]
 
-            out = out.cpu().detach().numpy()
-            pos = pos.cpu().numpy()
+f(32, 8, 10770)
+f(2, 8, 10770)
 
-            for b in range(pos.shape[0]):
-                o = out[b]
-                p = pos[b]
-
-                error = math.sqrt((o[0] - p[0]) ** 2 + (o[1] - p[1]) ** 2)
-
-                if error < min_error:
-                    min_error = error
-                if error > max_error:
-                    max_error = error
-                sum_error += error
-
-                errors[count_error] = error
-
-                count_error += 1
-
-        val_log.info('MIN error: {} '.format(min_error))
-        val_log.info('MAX error: {} '.format(max_error))
-        val_log.info('AVG error: {}'.format(sum_error / count_error))
-        val_log.info('MEAD error: {}'.format(np.median(errors)))
-
-    return val_dataset.__len__(),  min_error, max_error, (sum_error / count_error), (np.median(errors)), errors

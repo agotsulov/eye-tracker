@@ -199,25 +199,16 @@ def train_test(num_rects, w, seq_len, max_samples, lstm=False, batch_size=50):
 # train_test(16, 4, 8, 5000, lstm=True, batch_size=20)
 # train_test(16, 4, 8, 999999, lstm=True, batch_size=20)
 
-train_test(256, 16, 8, 999999, lstm=True, batch_size=20)
-train_test(256, 16, 4, 999999, lstm=True, batch_size=20)
-train_test(256, 16, 2, 999999, lstm=True, batch_size=20)
+# train_test(256, 16, 8, 999999, lstm=True, batch_size=20)
+# train_test(256, 16, 4, 999999, lstm=True, batch_size=20)
+# train_test(256, 16, 2, 999999, lstm=True, batch_size=20)
+# train_test(256, 16, 8, 2500, lstm=True, batch_size=20)
+# train_test(256, 16, 8, 5000, lstm=True, batch_size=20)
+
+
+# train_test(32 * 32, 32, 8, 2500, lstm=True, batch_size=20)
+train_test(32 * 32, 32, 8, 5000, lstm=True, batch_size=20)
 train_test(256, 16, 8, 2500, lstm=True, batch_size=20)
 train_test(256, 16, 8, 5000, lstm=True, batch_size=20)
 
-train_test(4, 2, 1, 2500)
-train_test(4, 2, 1, 5000)
-train_test(4, 2, 1, 999999)
-train_test(16, 4, 1, 2500)
-train_test(16, 4, 1, 5000)
-train_test(16, 4, 1, 999999)
-
-train_test(4, 2, 2, 2500)
-train_test(4, 2, 2, 5000)
-train_test(4, 2, 2, 999999)
-train_test(16, 4, 2, 2500)
-train_test(16, 4, 2, 5000)
-train_test(16, 4, 2, 999999)
-
-
-
+import twobetterthenone

@@ -55,7 +55,7 @@ y = random.randint(0, max_h)  # infoObject.current_h
 face_detector = utility.FaceDetector()
 
 batch_size = 50
-seq_len = 4
+seq_len = 8
 max_seq_len = 60
 
 num_rects = 4
@@ -185,7 +185,7 @@ while not _quit:
                 _quit = True
             if event.key == pygame.K_SPACE and len(points) >= max_seq_len:
                 print("SAVE")
-                dataset.save_data(max_seq_len, list(eyes_left), list(eyes_right), list(faces), list(points))
+                dataset.save_data(max_seq_len, list(eyes_left), list(eyes_right), list(faces), list(points), test_split=10)
             if event.key == pygame.K_t:
                 model = train.train_model(model, seq_len, max_seq_len)
                 train.test_model(model, seq_len)
